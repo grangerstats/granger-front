@@ -1,25 +1,19 @@
-
+body, html {
+    min-height: 100vh;
+}
 
 .form-custom {
     background-color: white;
-    min-height: 300px !important;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    min-height: 250px !important;
+    margin-top: 25px;
+    margin-bottom: 25px;
     padding: 5%;
     box-shadow: 0 5px 10px #888888;
     border-radius: 10px;
 }
 
-.formulario {
-    padding: 10%;
-}
-
-body {
-    height: 100vh;
-}
-
 .background {
-    height: 100vh;
+    min-height: 100vh;
     background: lightgrey;
 }
 
@@ -35,4 +29,8 @@ body {
 
 .recharts-legend-item-text {
     text-transform: capitalize !important;
+}
+
+.recharts-default-legend {
+    margin-bottom: 40px !important;
 }

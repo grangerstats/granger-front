@@ -106,36 +106,39 @@ class Descritiva extends Component {
                                 </div>
                             </form>
                         </div>
-                        <div className="col-md-4 col-sm-12">
-                            {this.state.resultado.dados &&
+                        <div className="col-md-8 col-sm-12">
+                            {
+                                this.state.resultado.dados &&
                                 <div className="form-custom">
-                                    <table className="table">
-                                        <thead className="thead-dark text-center">
-                                            <tr>
-                                                <th scope="col">{this.state.nomeVariavel}</th>
-                                                <th scope="col">Frequência Simples (Fi)</th>
-                                                <th scope="col">Frequência simples % (Fr%)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {this.state.resultado.dados.map(item => {
-                                                return (
-                                                    <tr className="text-center" key={item.name}>
-                                                        <td className="text-capitalize">{item.name}</td>
-                                                        <td>{item.value}</td>
-                                                        <td>{item.fi}%</td>
+                                    <div className="row">
+                                        <div className="col-md-6 col-sm-12">
+                                            <Grafico dataGrafico={this.state.resultado.dados} />
+                                        </div>
+                                        <div className="col-md-6 col-sm-12">
+                                            <table className="table">
+                                                <thead className="thead-dark text-center">
+                                                    <tr>
+                                                        <th scope="col">{this.state.nomeVariavel}</th>
+                                                        <th scope="col">Frequência Simples (Fi)</th>
+                                                        <th scope="col">Frequência simples % (Fr%)</th>
                                                     </tr>
-                                                )
-                                            })}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            }
-                        </div>
-                        <div className="col-md-4 col-sm-12">
-                            {this.state.resultado.dados &&
-                                <div className="form-customm">
-                                    <Grafico dataGrafico={this.state.resultado.dados} />
+                                                </thead>
+                                                <tbody>
+                                                    {
+                                                        this.state.resultado.dados.map(item => {
+                                                            return (
+                                                                <tr className="text-center" key={item.name}>
+                                                                    <td className="text-capitalize">{item.name}</td>
+                                                                    <td>{item.value}</td>
+                                                                    <td>{item.fi}%</td>
+                                                                </tr>
+                                                            )
+                                                        })
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             }
                         </div>

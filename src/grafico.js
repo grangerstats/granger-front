@@ -3,7 +3,21 @@ import {
     PieChart, Pie, Tooltip, Cell, Legend, ResponsiveContainer
 } from "recharts";
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = [
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`,
+    `#${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`
+];
 
 const RADIAN = Math.PI / 180;
 
@@ -28,14 +42,15 @@ export default class Example extends PureComponent {
     };
 
     render() {
+        console.log('this.props', this.props)
         return (
-                    <ResponsiveContainer width={250} minHeight={200}>
-                <PieChart style={{marginLeft: "auto", marginRight: "auto"}} > 
-                    <Legend align="center" className="text-capitalize"/>
-                    <Tooltip itemStyle={{textTransform: "capitalize"}}/>
+            <ResponsiveContainer minHeight={300}>
+                <PieChart style={{ marginLeft: "auto", marginRight: "auto" }} >
+                    <Legend align="center" verticalAlign="top" className="text-capitalize" />
+                    <Tooltip itemStyle={{ textTransform: "capitalize" }} />
                     <Pie
                         data={this.props.dataGrafico}
-                        cx={120}
+                        cx={170}
                         cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
@@ -48,7 +63,7 @@ export default class Example extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
-                </ResponsiveContainer>
+            </ResponsiveContainer>
         );
     }
 }
