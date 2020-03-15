@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Menu from "./Menu";
 import axios from "axios";
-import Grafico from "./grafico";
+import PieChart from "./PieChart";
+import BarChart from "./BarChart";
+import Histograma from "./Histrograma";
 
 class Descritiva extends Component {
     constructor(props) {
@@ -47,7 +49,7 @@ class Descritiva extends Component {
         let header = {
             "Content-type": "application/json"
         }
-        axios.post("https://granger-api-com-br.umbler.net/descritiva", body, { headers: header })
+        axios.post("http://localhost:3000/descritiva", body, { headers: header })
             .then(res => {
                 this.setState({ resultado: res.data })
             })
@@ -58,6 +60,9 @@ class Descritiva extends Component {
 
 
     render() {
+        let fac = 0;
+        let facPerc = 0;
+
         return (
             <div className="background">
                 <Menu />
@@ -112,31 +117,52 @@ class Descritiva extends Component {
                                 <div className="form-custom">
                                     <div className="row">
                                         <div className="col-md-6 col-sm-12">
-                                            <Grafico dataGrafico={this.state.resultado.dados} />
+                                            {this.state.resultado.tipo === "qualitativa" &&
+                                                <PieChart dataGrafico={this.state.resultado.dados} />
+                                            }
+                                            {this.state.resultado.tipo === "quantitativaDiscreta" &&
+                                                <BarChart dataGrafico={this.state.resultado.dados}
+                                                    nomeLegenda={this.state.resultado.variavel} />
+                                            }
+                                            {this.state.resultado.tipo === "quantitativaContinua" &&
+                                                <Histograma dataGrafico={this.state.resultado.dados}
+                                                    nomeLegenda={this.state.resultado.variavel} />
+                                            }
                                         </div>
                                         <div className="col-md-6 col-sm-12">
-                                            <table className="table">
-                                                <thead className="thead-dark text-center">
-                                                    <tr>
-                                                        <th scope="col">{this.state.nomeVariavel}</th>
-                                                        <th scope="col">Frequência Simples (Fi)</th>
-                                                        <th scope="col">Frequência simples % (Fr%)</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {
-                                                        this.state.resultado.dados.map(item => {
-                                                            return (
-                                                                <tr className="text-center" key={item.name}>
-                                                                    <td className="text-capitalize">{item.name}</td>
-                                                                    <td>{item.value}</td>
-                                                                    <td>{item.fi}%</td>
-                                                                </tr>
-                                                            )
-                                                        })
-                                                    }
-                                                </tbody>
-                                            </table>
+                                            <div className="table-responsive">
+                                                <table className="table">
+                                                    <thead className="thead-dark text-center">
+                                                        <tr>
+                                                            <th scope="col">{this.state.nomeVariavel}</th>
+                                                            <th scope="col">Frequência Simples (Fi)</th>
+                                                            <th scope="col">Frequência simples % (Fr%)</th>
+                                                            <th scope="col">Frequência acumulada (Fac)</th>
+                                                            <th scope="col">Frequência acumulada % (Fac%)</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {
+
+                                                            this.state.resultado.dados.map(item => {
+                                                                fac = fac + item.value;
+                                                                facPerc = facPerc + item.fi;
+
+                                                                return (
+                                                                    <tr className="text-center" key={item.name}>
+                                                                        <td className="text-capitalize">{item.name}</td>
+                                                                        <td>{item.value}</td>
+                                                                        <td>{item.fi}%</td>
+                                                                        <td>{fac}</td>
+                                                                        <td>{facPerc}</td>
+                                                                    </tr>
+                                                                )
+                                                            })
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
