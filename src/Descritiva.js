@@ -134,7 +134,7 @@ class Descritiva extends Component {
                                                 <table className="table">
                                                     <thead className="thead-dark text-center">
                                                         <tr>
-                                                            <th scope="col">{this.state.nomeVariavel}</th>
+                                                            <th scope="col">{this.state.resultado.variavel}</th>
                                                             <th scope="col">Frequência Simples (Fi)</th>
                                                             <th scope="col">Frequência simples % (Fr%)</th>
                                                             <th scope="col">Frequência acumulada (Fac)</th>
