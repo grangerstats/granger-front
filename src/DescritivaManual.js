@@ -49,7 +49,7 @@ class Descritiva extends Component {
         let header = {
             "Content-type": "application/json"
         }
-        axios.post("https://granger-api-com-br.umbler.net/descritiva", body, { headers: header })
+        axios.post("http://localhost:3000/descritiva", body, { headers: header })
             .then(res => {
                 this.setState({ resultado: res.data })
             })
@@ -67,51 +67,56 @@ class Descritiva extends Component {
             <div className="background">
                 <Menu />
                 <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-4 col-sm-12">
-                            <form className="form-custom formulario" onSubmit={this.calcular}>
-                                <div className="form-row">
-                                    <div className="form-group col-12">
-                                        <input type="text" id="nomeVariavel" placeholder="Nome da variável"
-                                            className="form-control" required value={this.state.nomeVariavel}
-                                            onChange={this.handleNomeVariavel}
-                                            ref={input => this.nomeVariavel = input} autoComplete="on">
-                                        </input>
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-12">
-                                        <input type="text" id="dados" placeholder="Dados separados por ';'"
-                                            className="form-control" required value={this.state.dados}
-                                            onChange={this.handleDados} ref={input => this.dados = input} autoComplete="on">
-                                        </input>
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-12 text-center d-flex flex-column">
-                                        <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                                            <label className="btn btn-secondary active"> Amostra
-                                                <input type="radio" name="options" id="amostra" defaultChecked
-                                                    onClick={this.handleAmostra} ref={input => this.amostra = input}>
-                                                </input>
-                                            </label>
-                                            <label className="btn btn-secondary"> População
-                                                <input type="radio" name="options" id="populacao"
-                                                    onClick={this.handlePopulacao} ref={input => this.populacao = input}>
-                                                </input>
-                                            </label>
+                    {
+                        !this.state.resultado.dados &&
+                        <div className="row">
+                            <div className="col-md-12 col-sm-12">
+                                <form className="form-custom formulario" onSubmit={this.calcular}>
+                                    <div className="form-row">
+                                        <div className="form-group col-12">
+                                            <input type="text" id="nomeVariavel" placeholder="Nome da variável"
+                                                className="form-control" required value={this.state.nomeVariavel}
+                                                onChange={this.handleNomeVariavel}
+                                                ref={input => this.nomeVariavel = input} autoComplete="on">
+                                            </input>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="form-row mt-0.5">
-                                    <div className="col-12 text-center">
-                                        <input type="submit" className="btn btn-outline-secondary btn-custom" id="btnCalcular" value="Calcular">
-                                        </input>
+                                    <div className="form-row">
+                                        <div className="form-group col-12">
+                                            <input type="text" id="dados" placeholder="Dados separados por ';'"
+                                                className="form-control" required value={this.state.dados}
+                                                onChange={this.handleDados} ref={input => this.dados = input} autoComplete="on">
+                                            </input>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                    <div className="form-row">
+                                        <div className="form-group col-12 text-center d-flex flex-column">
+                                            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label className="btn btn-secondary active"> Amostra
+                                                <input type="radio" name="options" id="amostra" defaultChecked
+                                                        onClick={this.handleAmostra} ref={input => this.amostra = input}>
+                                                    </input>
+                                                </label>
+                                                <label className="btn btn-secondary"> População
+                                                <input type="radio" name="options" id="populacao"
+                                                        onClick={this.handlePopulacao} ref={input => this.populacao = input}>
+                                                    </input>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="form-row mt-0.5">
+                                        <div className="col-12 text-center">
+                                            <input type="submit" className="btn btn-outline-secondary btn-custom" id="btnCalcular" value="Calcular">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div className="col-md-8 col-sm-12">
+                    }
+                    <div className="row">
+                        <div className="col-md-12 col-sm-12">
                             {
                                 this.state.resultado.dados &&
                                 <div className="form-custom">

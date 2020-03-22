@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Descritiva from './Descritiva';
+import App from './App';
 import './css/Main.css';
 
-ReactDOM.render(<Descritiva/>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));

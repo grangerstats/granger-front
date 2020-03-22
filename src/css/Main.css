@@ -12,13 +12,19 @@ body, html {
     border-radius: 10px;
 }
 
+.formulario {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .background {
     min-height: 100vh;
     background: lightgrey;
 }
 
 .btn-custom {
-    border-radius: 50px;
+    border-radius: 50px !important; 
     width: 100%;
 }
 
@@ -33,4 +39,23 @@ body, html {
 
 .recharts-default-legend {
     margin-bottom: 40px !important;
+}
+
+.descritiva-main {
+    margin-top: 100px;
+}
+
+.import {
+    background-color: transparent;
+    padding: 5%;
+}
+
+.btn-import {
+    width: 70%;
+    margin-bottom: 15px !important;
+    color: #555;
+}
+
+.custom-file-label {
+    color: rgb(108,117,125) !important;
 }
