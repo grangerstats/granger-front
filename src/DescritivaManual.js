@@ -49,7 +49,7 @@ class Descritiva extends Component {
         let header = {
             "Content-type": "application/json"
         }
-        axios.post("http://localhost:3000/descritiva", body, { headers: header })
+        axios.post("https://granger-api-com-br.umbler.net/descritiva", body, { headers: header })
             .then(res => {
                 this.setState({ resultado: res.data })
             })
