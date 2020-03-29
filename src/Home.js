@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Menu from "./Menu";
-import {menu} from "./JavaScript/Scripts"
+import { menu } from "./JavaScript/Scripts"
 
 class Home extends Component {
-    componentDidMount(){
+    componentDidMount() {
         menu();
     }
     render() {
@@ -18,9 +18,9 @@ class Home extends Component {
                                 <h1 className="main-txt">Prático e intuitivo</h1>
                             </div>
                             <div className="row">
-                                <h2>Com três análises básicas e objetivas, você consegue tomar a melhor decisão para fazer seu
-                                negócio
-                                decolar.</h2>
+                                <p className="lead">Com três análises básicas e objetivas, você consegue tomar a melhor decisão para fazer seu
+                                negócio decolar.
+                                    </p>
                             </div>
                             <div className="row">
                                 <Link className="btn btn-outline btn-start" to="/login">Comece Agora</Link>
@@ -52,10 +52,10 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="container-fluid est-desc">
+                <div className="container est-desc">
                     <div className="row">
                         <div className="col-md-6 col-sm-12">
-                            <img className="analysis" src={require("./imagens/ED.png")} alt="ImagemDescritiva"/>
+                            <img className="analysis" src={require("./imagens/ED.png")} alt="ImagemDescritiva" />
                         </div>
                         <div className="col-md-6 col-sm-12">
                             <div className="row">
@@ -74,7 +74,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="container prob">
+                <div className="container prob mt-4">
                     <div className="row">
                         <div className="col-md-6 col-sm-12 prob-text">
                             <div className="row">
@@ -91,11 +91,11 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="col-md-6 col-sm-12">
-                            <img className="analysis" src={require("./imagens/Prob.png")} alt="ImagemProbabilidade"/>
+                            <img className="analysis" src={require("./imagens/Prob.png")} alt="ImagemProbabilidade" />
                         </div>
                     </div>
                 </div>
-                <div className="container-fluid corr">
+                <div className="container corr mt-4">
                     <div className="row">
                         <div className="col-md-6 col-sm-12">
                             <img className="analysis" src={require("./imagens/CR.png")} alt="ImagemCorrelacao" />
