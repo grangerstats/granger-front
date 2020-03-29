@@ -1,30 +1,34 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 
 class Granger extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">GRANGER</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="/navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="nav navbar-nav navbar-right ml-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="/">Estatística Descritiva <span className="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">Probabilidade</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">Correlação e Regressão</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="/" tabIndex="-1" aria-disabled="true">LOGIN</a>
-            </li>
-          </ul>
+      <nav className="navbar navbar-expand-lg navbar-light sticky-top">
+        <div className="container-fluid">
+            <Link className="navbar-brand" to="/">GRANGER</Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarResponsive">
+                <ul className="navbar-nav ml-auto">
+                    <li className="nav-item">
+                        <Link className="nav-link slide-left-right" to="/descritiva">Estatística Descritiva</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link slide-left-right" to="/probabilidade">Probabilidade</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link slide-left-right" to="/correlacao">Correlação e Regressão</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link btn btn-outline-secondary btn-login" to="/login">LOGIN</Link>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>)
+    </nav>
+    )
   }
 }
 export default Granger;

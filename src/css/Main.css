@@ -1,7 +1,3 @@
-body, html {
-    min-height: 100vh;
-}
-
 .form-custom {
     background-color: white;
     min-height: 250px !important;
@@ -59,3 +55,4 @@ body, html {
 .custom-file-label {
     color: rgb(108,117,125) !important;
 }
+
