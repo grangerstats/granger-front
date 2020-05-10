@@ -49,7 +49,7 @@ class Descritiva extends Component {
         let header = {
             "Content-type": "application/json"
         }
-        axios.post("https://granger-api-com-br.umbler.net/descritiva", body, { headers: header })
+        axios.post("https://grangerapi-com.umbler.net/descritiva", body, { headers: header })
             .then(res => {
                 this.setState({ resultado: res.data })
             })
@@ -169,6 +169,9 @@ class Descritiva extends Component {
                                                 </table>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className="row">
+                                        <button onClick={() => this.setState({ resultado: {} })} className="btn btn-outline-secondary btn-custom" id="btnVoltar">VOLTAR</button>
                                     </div>
                                 </div>
                             }

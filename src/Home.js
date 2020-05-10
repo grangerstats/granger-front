@@ -31,26 +31,42 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="container-fluid works">
+                <div className="container works">
                     <div className="row">
                         <div className="col-12">
                             <h1 className="txt-works">Como funciona</h1>
                         </div>
-                        <div className="row steps">
-                            <div className="col-md-4 col-sm-12">
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4 col-sm-12">
+                            <div className="row">
+                                <img className="steps" src={require("./imagens/Step1.png")} alt="Importação" />
+                            </div>
+                            <div className="row txt-steps">
                                 <h3>1. Importe ou insira os dados</h3>
                                 <p>Importe os dados no formato .csv ou os insira manualmente.</p>
                             </div>
-                            <div className="col-md-4 col-sm-12">
+                        </div>
+                        <div className="col-md-4 col-sm-12">
+                            <div className="row">
+                                <img className="steps" src={require("./imagens/Step2.png")} alt="Gráficos" />
+                            </div>
+                            <div className="row txt-steps">
                                 <h3>2. Gere os gráficos</h3>
                                 <p>De acordo com o tipo dos dados, os cálculos e os gráficos serão gerados automaticamente.</p>
                             </div>
-                            <div className="col-md-4 col-sm-12">
+                        </div>
+                        <div className="col-md-4 col-sm-12">
+                            <div className="row">
+                                <img className="steps" src={require("./imagens/Step3.png")} alt="Decisão" />
+                            </div>
+                            <div className="row txt-steps">
                                 <h3>3. Tome a melhor decisão</h3>
                                 <p>Por fim, é só analisar os resultados e tomar a melhor decisão.</p>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div className="container est-desc">
                     <div className="row">

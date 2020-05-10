@@ -56,3 +56,8 @@
     color: rgb(108,117,125) !important;
 }
 
+#btnVoltar {
+    max-width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+}
