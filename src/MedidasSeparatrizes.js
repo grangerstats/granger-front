@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
 
-const URL = "http://localhost:3001";
-// const URL = "https://grangerapi-com.umbler.net"
+// const URL = "http://localhost:3001";
+const URL = "https://grangerapi-com.umbler.net";
 
 class Separatrizes extends Component {
 	constructor(props) {

@@ -8,8 +8,8 @@ import Tabela from "./Tabela";
 import Axios from "axios";
 import Separatrizes from "./MedidasSeparatrizes";
 
-const URL = "http://localhost:3001";
-// const URL = "https://grangerapi-com.umbler.net"
+// const URL = "http://localhost:3001";
+const URL = "https://grangerapi-com.umbler.net";
 
 class Descritiva extends Component {
 	constructor(props) {

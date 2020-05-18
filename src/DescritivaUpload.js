@@ -7,8 +7,8 @@ import Histograma from "./Histrograma";
 import { mudaNome, abrirUpload } from "./JavaScript/Scripts";
 import Tabela from "./Tabela";
 
-const URL = "http://localhost:3030";
-// const URL = "https://grangerapi-com.umbler.net"
+// const URL = "http://localhost:3030";
+const URL = "https://grangerapi-com.umbler.net";
 
 class Descritiva extends Component {
 	constructor(props) {
