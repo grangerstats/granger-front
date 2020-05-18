@@ -6,6 +6,7 @@ import BarChart from "./BarChart";
 import Histograma from "./Histrograma";
 import Tabela from "./Tabela";
 import Axios from "axios";
+import Separatrizes from "./MedidasSeparatrizes";
 
 const URL = "http://localhost:3001";
 // const URL = "https://grangerapi-com.umbler.net"
@@ -129,6 +130,27 @@ class Descritiva extends Component {
 	}
 
 	renderizaMedidaCentral() {
+		if (this.state.resultado.media.trim() && !this.state.resultado.moda.trim() && !this.state.resultado.mediana.trim())
+			return (
+				<div className="medida-central">
+					<span className="text-capitalize ">{this.state.resultado.media}</span>
+				</div>
+			);
+
+		if (!this.state.resultado.media.trim() && this.state.resultado.moda.trim() && !this.state.resultado.mediana.trim())
+			return (
+				<div className="medida-central">
+					<span className="text-capitalize ">{this.state.resultado.moda}</span>
+				</div>
+			);
+
+		if (!this.state.resultado.media.trim() && !this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
+			return (
+				<div className="medida-central">
+					<span className="text-capitalize ">{this.state.resultado.mediana}</span>
+				</div>
+			);
+
 		if (this.state.resultado.media.trim() && this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
 			return (
 				<div className="medida-central">
@@ -183,7 +205,6 @@ class Descritiva extends Component {
 	render() {
 		return (
 			<div className="background">
-				{console.log("this", this.state)}
 				<Menu />
 				<div className="container-fluid">
 					{!this.state.resultado.dados && (
@@ -248,6 +269,9 @@ class Descritiva extends Component {
 							{this.state.resultado.dados && (
 								<div className="form-custom">
 									<div className="row ">{this.renderizaMedidaCentral()}</div>
+									<div className="row mb-4">
+										<Separatrizes {...this} />
+									</div>
 									<div className="row">
 										<div className="col-md-6 col-sm-12">
 											{this.state.resultado.tipo === "qualitativa" && <PieChart dataGrafico={this.state.resultado.dados} />}
