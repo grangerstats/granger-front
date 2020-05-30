@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
 
-// const URL = "http://localhost:3001";
-const URL = "https://grangerapi-com.umbler.net";
+const URL = "http://localhost:3001";
+// const URL = "https://grangerapi-com.umbler.net";
 
 class Separatrizes extends Component {
 	constructor(props) {
@@ -64,34 +64,44 @@ class Separatrizes extends Component {
 				console.log("erro", erro);
 			});
 	}
+
 	render() {
 		return (
 			<>
-				<div className="col-md-3">
-					<select className="form-control" ref={(input) => (this.separatriz = input)} onChange={(e) => this.handleChangeSeparatriz(e)}>
-						<option value="Selecione">Selecione uma opção...</option>
-						<option value="Quartil">Quartil</option>
-						<option value="Quintil">Quintil</option>
-						<option value="Decil">Decil</option>
-						<option value="Porcentil">Porcentil</option>
-					</select>
+				<div className="row">
+					<div className="col-12">
+						<p class="h3 text-center">Medidas Separatrizes</p>
+					</div>
 				</div>
-				{this.state.exibeMedidas && (
-					<div className="col-md-3">
-						<select className="form-control" onChange={(e) => this.handleChangeMedidas(e)}>
-							<option>Selecione uma opção...</option>
-							{this.state.opcaoesMedidas.map((op) => (
-								<option value={op.value} key={op.value}>
-									{op.name}
-								</option>
-							))}
+				<div className="d-flex justify-content-center">
+					<div className="col-md-2">
+						<select className="form-control" ref={(input) => (this.separatriz = input)} onChange={(e) => this.handleChangeSeparatriz(e)}>
+							<option value="Selecione">Selecione...</option>
+							<option value="Quartil">Quartil</option>
+							<option value="Quintil">Quintil</option>
+							<option value="Decil">Decil</option>
+							<option value="Porcentil">Porcentil</option>
 						</select>
 					</div>
-				)}
-				<div className="col-md-4">
-					<div className="medida-central">
-						<span className="text-capitalize ">{this.state.resposta}</span>
-					</div>
+					{this.state.exibeMedidas && (
+						<>
+							<div className="col-md-2">
+								<select className="form-control" onChange={(e) => this.handleChangeMedidas(e)}>
+									<option>Selecione...</option>
+									{this.state.opcaoesMedidas.map((op) => (
+										<option value={op.value} key={op.value}>
+											{op.name}
+										</option>
+									))}
+								</select>
+							</div>
+							<div>
+								<div className="medidas">
+									<span className="text-capitalize ">{this.state.resposta}</span>
+								</div>
+							</div>
+						</>
+					)}
 				</div>
 			</>
 		);

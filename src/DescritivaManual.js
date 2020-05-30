@@ -6,10 +6,11 @@ import BarChart from "./BarChart";
 import Histograma from "./Histrograma";
 import Tabela from "./Tabela";
 import Axios from "axios";
-import Separatrizes from "./MedidasSeparatrizes";
+import DesvioPadrao from "./DesvioPadrao";
+import { toPDF } from "./JavaScript/Scripts";
 
-// const URL = "http://localhost:3001";
-const URL = "https://grangerapi-com.umbler.net";
+const URL = "http://localhost:3001";
+// const URL = "https://grangerapi-com.umbler.net";
 
 class Descritiva extends Component {
 	constructor(props) {
@@ -21,6 +22,9 @@ class Descritiva extends Component {
 			dados: "",
 			amostra: true,
 			populacao: false,
+			exibeMedidas: false,
+			opcaoesMedidas: [],
+			resposta: "",
 		};
 
 		this.handleNomeVariavel = this.handleNomeVariavel.bind(this);
@@ -87,6 +91,24 @@ class Descritiva extends Component {
 				this.setState({ resultado: novoResultado });
 			})
 			.catch((erro) => console.log(erro));
+
+		body = {
+			tipo: this.state.resultado.tipo,
+			dados: this.state.resultado.dados,
+		};
+		body = JSON.stringify(body);
+		header = {
+			"Content-type": "application/json",
+		};
+
+		Axios.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+			.then((res) => {
+				console.log("res");
+				this.setState({ resposta: res.data });
+			})
+			.catch((erro) => {
+				console.log("erro", erro);
+			});
 	}
 
 	async handleDown(linha) {
@@ -127,33 +149,51 @@ class Descritiva extends Component {
 				this.setState({ resultado: novoResultado });
 			})
 			.catch((erro) => console.log(erro));
+
+		body = {
+			tipo: this.state.resultado.tipo,
+			dados: this.state.resultado.dados,
+		};
+		body = JSON.stringify(body);
+		header = {
+			"Content-type": "application/json",
+		};
+
+		Axios.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+			.then((res) => {
+				console.log("res");
+				this.setState({ resposta: res.data });
+			})
+			.catch((erro) => {
+				console.log("erro", erro);
+			});
 	}
 
 	renderizaMedidaCentral() {
 		if (this.state.resultado.media.trim() && !this.state.resultado.moda.trim() && !this.state.resultado.mediana.trim())
 			return (
-				<div className="medida-central">
+				<div className="medidas">
 					<span className="text-capitalize ">{this.state.resultado.media}</span>
 				</div>
 			);
 
 		if (!this.state.resultado.media.trim() && this.state.resultado.moda.trim() && !this.state.resultado.mediana.trim())
 			return (
-				<div className="medida-central">
+				<div className="medidas">
 					<span className="text-capitalize ">{this.state.resultado.moda}</span>
 				</div>
 			);
 
 		if (!this.state.resultado.media.trim() && !this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
 			return (
-				<div className="medida-central">
+				<div className="medidas">
 					<span className="text-capitalize ">{this.state.resultado.mediana}</span>
 				</div>
 			);
 
 		if (this.state.resultado.media.trim() && this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
 			return (
-				<div className="medida-central">
+				<div className="medidas">
 					<span className="text-capitalize ">
 						{this.state.resultado.media} - {this.state.resultado.moda} - {this.state.resultado.mediana}
 					</span>
@@ -161,7 +201,7 @@ class Descritiva extends Component {
 			);
 		if (!this.state.resultado.media.trim() && this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
 			return (
-				<div className="medida-central">
+				<div className="medidas">
 					<span className="text-capitalize ">
 						{this.state.resultado.moda} - {this.state.resultado.mediana}
 					</span>
@@ -169,7 +209,7 @@ class Descritiva extends Component {
 			);
 		if (this.state.resultado.media.trim() && !this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
 			return (
-				<div className="medida-central">
+				<div className="medidas">
 					<span className="text-capitalize ">
 						{this.state.resultado.media} - {this.state.resultado.mediana}
 					</span>
@@ -177,7 +217,7 @@ class Descritiva extends Component {
 			);
 		if (this.state.resultado.media.trim() && this.state.resultado.moda.trim() && !this.state.resultado.mediana.trim())
 			return (
-				<div className="medida-central">
+				<div className="medidas">
 					<span className="text-capitalize ">
 						{this.state.resultado.media} - {this.state.resultado.moda}
 					</span>
@@ -202,6 +242,60 @@ class Descritiva extends Component {
 			});
 	}
 
+	handleChangeSeparatriz(e) {
+		let opcoes = [];
+		if (this.separatriz.selectedIndex === 1) {
+			for (let index = 1; index <= 4; index++) {
+				const element = { value: index, name: `${index}` };
+				opcoes.push(element);
+			}
+		}
+		if (this.separatriz.selectedIndex === 2) {
+			for (let index = 1; index <= 5; index++) {
+				const element = { value: index, name: `${index}` };
+				opcoes.push(element);
+			}
+		}
+		if (this.separatriz.selectedIndex === 3) {
+			for (let index = 1; index <= 10; index++) {
+				const element = { value: index, name: `${index}` };
+				opcoes.push(element);
+			}
+		}
+		if (this.separatriz.selectedIndex === 4) {
+			for (let index = 1; index <= 100; index++) {
+				const element = { value: index, name: `${index}` };
+				opcoes.push(element);
+			}
+		}
+		this.setState({ exibeMedidas: true });
+		this.setState({ opcaoesMedidas: opcoes });
+	}
+
+	handleChangeMedidas(e) {
+		let body = {
+			tipo: this.state.resultado.tipo,
+			dados: this.state.resultado.dados,
+		};
+		body = JSON.stringify(body);
+		let header = {
+			"Content-type": "application/json",
+		};
+
+		Axios.post(`${URL}/${this.separatriz.value.toLowerCase()}/${e.target.value.toLowerCase()}`, body, { headers: header })
+			.then((res) => {
+				console.log("res");
+				this.setState({ resposta: res.data });
+			})
+			.catch((erro) => {
+				console.log("erro", erro);
+			});
+	}
+
+	saveAsPDF() {
+		console.log("1.0");
+		toPDF();
+	}
 	render() {
 		return (
 			<div className="background">
@@ -264,14 +358,11 @@ class Descritiva extends Component {
 							</div>
 						</div>
 					)}
-					<div className="row">
+					<div className="row" id="toPDF">
 						<div className="col-md-12 col-sm-12">
 							{this.state.resultado.dados && (
 								<div className="form-custom">
-									<div className="row ">{this.renderizaMedidaCentral()}</div>
-									<div className="row mb-4">
-										<Separatrizes {...this} />
-									</div>
+									<h1 className="text-center mb-5">Aqui está o resultado</h1>
 									<div className="row">
 										<div className="col-md-6 col-sm-12">
 											{this.state.resultado.tipo === "qualitativa" && <PieChart dataGrafico={this.state.resultado.dados} />}
@@ -284,8 +375,71 @@ class Descritiva extends Component {
 											</div>
 										</div>
 									</div>
+
 									<div className="row">
-										<button onClick={() => this.setState({ resultado: {} })} className="btn btn-outline-secondary btn-custom" id="btnVoltar">
+										<div className="col-12">
+											<p className="h3 text-center">Medidas de Tendência Central</p>
+										</div>
+										{this.renderizaMedidaCentral()}
+									</div>
+
+									<DesvioPadrao {...this} />
+
+									<div className="row mb-4">
+										<div className="col-12">
+											<div className="row">
+												<div className="col-12">
+													<p className="h3 text-center">Medidas Separatrizes</p>
+												</div>
+											</div>
+											<div className="d-flex justify-content-center">
+												<div className="col-md-2">
+													<select className="form-control" ref={(input) => (this.separatriz = input)} onChange={(e) => this.handleChangeSeparatriz(e)}>
+														<option value="Selecione">Selecione...</option>
+														<option value="Quartil">Quartil</option>
+														<option value="Quintil">Quintil</option>
+														<option value="Decil">Decil</option>
+														<option value="Porcentil">Porcentil</option>
+													</select>
+												</div>
+												{this.state.exibeMedidas && (
+													<>
+														<div className="col-md-2">
+															<select className="form-control" ref={(input) => (this.medida = input)} onChange={(e) => this.handleChangeMedidas(e)}>
+																<option>Selecione...</option>
+																{this.state.opcaoesMedidas.map((op) => (
+																	<option value={op.value} key={op.value}>
+																		{op.name}
+																	</option>
+																))}
+															</select>
+														</div>
+														<div>
+															<div className="medidas">
+																<span className="text-capitalize ">{this.state.resposta}</span>
+															</div>
+														</div>
+													</>
+												)}
+											</div>
+										</div>
+									</div>
+									{/* <div className="row mb-2">
+										<button id="btnVoltar" className="btn btn-outline-secondary btn-custom text-uppercase" onClick={() => this.saveAsPDF()}>
+											Salvar Resultado
+										</button>
+									</div> */}
+									<div className="row">
+										<button
+											onClick={() => {
+												this.setState({ resultado: {} });
+												this.setState({ exibeMedidas: false });
+												this.setState({ opcaoesMedidas: [] });
+												this.setState({ resposta: "" });
+											}}
+											className="btn btn-outline-secondary btn-custom"
+											id="btnVoltar"
+										>
 											VOLTAR
 										</button>
 									</div>

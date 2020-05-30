@@ -1,146 +1,152 @@
-body, html {
-    min-height: 100vh;
-    font-family: 'Lato', serif;
+body,
+html {
+	min-height: 100vh;
+	font-family: "Lato", serif;
 }
 
 nav.black {
-    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .13);
-    background: white;
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.13);
+	background: white;
 }
 
 nav {
-    background-color: white;
+	background-color: white;
 }
 
 .image {
-    width: 100%;
-    height: auto;
-    background: white;
+	width: 100%;
+	height: auto;
+	background: white;
 }
 
 .slide-left-right {
-    text-decoration: none;
-    display: inline-block;
+	text-decoration: none;
+	display: inline-block;
 }
 
 .slide-left-right:hover:after {
-    width: 80%;
-    margin-left: 10%;
-    background: linear-gradient(105deg, #34c2eb, #1a7fc3);
+	width: 80%;
+	margin-left: 10%;
+	background: linear-gradient(105deg, #34c2eb, #1a7fc3);
 }
 
 .slide-left-right:after {
-    content: '';
-    display: block;
-    height: 3px;
-    width: 0;
-    transition: width .3s ease, background-color .3s ease;
-    -webkit-transition: width .3s ease, background-color .3s ease;
-    -moz-transition: width .3s ease, background-color .3s ease;
-    margin-left: 10%;
-    background: linear-gradient(105deg, #34c2eb, #1a7fc3);
+	content: "";
+	display: block;
+	height: 3px;
+	width: 0;
+	transition: width 0.3s ease, background-color 0.3s ease;
+	-webkit-transition: width 0.3s ease, background-color 0.3s ease;
+	-moz-transition: width 0.3s ease, background-color 0.3s ease;
+	margin-left: 10%;
+	background: linear-gradient(105deg, #34c2eb, #1a7fc3);
 }
 
 .navbar-brand {
-    padding-left: 2rem;
-    font-size: 1.5rem;
+	padding-left: 2rem;
+	font-size: 1.5rem;
 }
 
 .nav-btn {
-    width: 8rem;
+	width: 8rem;
 }
 
 .btn-login:hover {
-    background-color: #34c2eb;
-    color: white !important;
+	background-color: #34c2eb;
+	color: white !important;
 }
 
 .btn-login {
-    padding: .4rem 3rem !important;
-    border-radius: 5px !important;
-    margin-left: 1rem !important;
-    border-color: #34c2eb !important;
-    color: #34c2eb !important;
+	padding: 0.4rem 3rem !important;
+	border-radius: 5px !important;
+	margin-left: 1rem !important;
+	border-color: #34c2eb !important;
+	color: #34c2eb !important;
 }
 
 .nav-item {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-    font-size: 1.1rem !important;
+	padding-left: 0.5rem !important;
+	padding-right: 0.5rem !important;
+	font-size: 1.1rem !important;
 }
 
 .heading-text {
-    width: auto;
-    padding-left: 5rem;
-    padding-top: 10rem;
+	width: auto;
+	padding-left: 5rem;
+	padding-top: 10rem;
 }
 
 .main-txt {
-    font-size: 69px;
+	font-size: 69px;
 }
 
 h2 {
-    width: 500px;
-    font-size: 19px;
-    padding-left: .3rem;
-    padding-top: .5rem;
-    letter-spacing: .5px;
+	width: 500px;
+	font-size: 19px;
+	padding-left: 0.3rem;
+	padding-top: 0.5rem;
+	letter-spacing: 0.5px;
 }
 
 .btn-start {
-    padding: .7rem 2rem;
-    border-radius: 5px;
-    border-color: #34c2eb;
-    color: white;
-    align-items: center !important;
-    background-color: #34c2eb;
-    margin-top: 1rem;
-    margin-left: .3rem;
+	padding: 0.7rem 2rem;
+	border-radius: 5px;
+	border-color: #34c2eb;
+	color: white;
+	align-items: center !important;
+	background-color: #34c2eb;
+	margin-top: 1rem;
+	margin-left: 0.3rem;
 }
 
 .btn-start:hover {
-    background-color: white;
-    color: #34c2eb;
-    transform: scale(1.05);
-    border-width: 2px;
+	background-color: white;
+	color: #34c2eb;
+	transform: scale(1.05);
+	border-width: 2px;
 }
 
 .txt-works {
-    text-align: center;
-    margin-bottom: 2rem;
-    margin-top: 3rem;
+	text-align: center;
+	margin-bottom: 2rem;
+	margin-top: 3rem;
 }
 
 .works {
-    margin-right: auto;
-    margin-left: auto;
-    padding-bottom: 5rem;
-    text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: 5rem;
+	text-align: center;
 }
 
 .steps {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 .analysis {
-    max-width: 381px;
+	max-width: 381px;
 }
 
 .est-desc {
-    margin-top: 7rem;
+	margin-top: 7rem;
 }
 
 .steps {
-    max-width: 300px;
+	max-width: 300px;
 }
 
 h3 {
-    margin-left: auto !important;
-    margin-right: auto !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
 .lead {
-    margin-left: .3rem;
+	margin-left: 0.3rem;
+}
+
+.align-center {
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
