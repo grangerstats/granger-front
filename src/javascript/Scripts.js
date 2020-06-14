@@ -1,4 +1,5 @@
 import * as $ from "jquery";
+import "jquery-mask-plugin/dist/jquery.mask";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
@@ -41,4 +42,9 @@ export function toPDF() {
 		doc.addImage(img, "JPEG", 0, 0, width, height);
 		doc.save("Resultado.pdf");
 	});
+}
+
+export function mask() {
+	$(".decimal").mask("0,#", { reverse: false });
+	$(".numerico").mask("0#", { reverse: false });
 }

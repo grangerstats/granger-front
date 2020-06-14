@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import Menu from "./Menu";
+import Menu from "../../components/Menu";
 import axios from "axios";
-import PieChart from "./PieChart";
-import BarChart from "./BarChart";
-import Histograma from "./Histrograma";
-import { mudaNome, abrirUpload } from "./JavaScript/Scripts";
-import Tabela from "./Tabela";
-
-// const URL = "http://localhost:3030";
-const URL = "https://grangerapi-com.umbler.net";
+import PieChart from "../../components/PieChart";
+import BarChart from "../../components/BarChart";
+import Histograma from "../../components/Histrograma";
+import { mudaNome, abrirUpload } from "../../javascript/Scripts";
+import Tabela from "../../components/Tabela";
+import { URL } from "../../config/config";
 
 class Descritiva extends Component {
 	constructor(props) {
