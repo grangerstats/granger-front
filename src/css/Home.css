@@ -150,3 +150,7 @@ h3 {
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
+
+.nav-tabs .nav-link a {
+	color: rgba(0, 0, 0, 0.5) !important;
+}

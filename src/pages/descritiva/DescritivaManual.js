@@ -5,7 +5,6 @@ import PieChart from "../../components/PieChart";
 import BarChart from "../../components/BarChart";
 import Histograma from "../../components/Histrograma";
 import Tabela from "../../components/Tabela";
-import Axios from "axios";
 import DesvioPadrao from "../DesvioPadrao";
 import { toPDF } from "../../javascript/Scripts";
 import { URL } from "../../config/config";
@@ -82,7 +81,8 @@ class Descritiva extends Component {
 		let header = {
 			"Content-type": "application/json",
 		};
-		await Axios.post(`${URL}/mediana`, body, { headers: header })
+		await axios
+			.post(`${URL}/mediana`, body, { headers: header })
 			.then((response) => {
 				novoResultado = this.state.resultado;
 				novoResultado.mediana = response.data;
@@ -99,7 +99,8 @@ class Descritiva extends Component {
 			"Content-type": "application/json",
 		};
 
-		Axios.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+		axios
+			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
 			.then((res) => {
 				console.log("res");
 				this.setState({ resposta: res.data });
@@ -140,7 +141,8 @@ class Descritiva extends Component {
 		let header = {
 			"Content-type": "application/json",
 		};
-		await Axios.post(`${URL}/mediana`, body, { headers: header })
+		await axios
+			.post(`${URL}/mediana`, body, { headers: header })
 			.then((response) => {
 				novoResultado = this.state.resultado;
 				novoResultado.mediana = response.data;
@@ -157,7 +159,8 @@ class Descritiva extends Component {
 			"Content-type": "application/json",
 		};
 
-		Axios.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+		axios
+			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
 			.then((res) => {
 				console.log("res");
 				this.setState({ resposta: res.data });
@@ -280,9 +283,9 @@ class Descritiva extends Component {
 			"Content-type": "application/json",
 		};
 
-		Axios.post(`${URL}/${this.separatriz.value.toLowerCase()}/${e.target.value.toLowerCase()}`, body, { headers: header })
+		axios
+			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${e.target.value.toLowerCase()}`, body, { headers: header })
 			.then((res) => {
-				console.log("res");
 				this.setState({ resposta: res.data });
 			})
 			.catch((erro) => {

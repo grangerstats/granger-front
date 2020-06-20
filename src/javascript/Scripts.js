@@ -46,5 +46,6 @@ export function toPDF() {
 
 export function mask() {
 	$(".decimal").mask("0,#", { reverse: false });
+	$(".real").mask("#0,0#", { reverse: false });
 	$(".numerico").mask("0#", { reverse: false });
 }
