@@ -25,10 +25,19 @@ class Probabilidade extends Component {
 				de: "",
 				para: "",
 			},
+			uniforme: {
+				minimo: "",
+				maximo: "",
+				valor: "",
+				intervalo: "menor",
+				de: "",
+				ate: "",
+			},
 		};
 
 		this.handleBinomialTipoEvento = this.handleBinomialTipoEvento.bind(this);
 		this.handleIntervalorNormal = this.handleIntervalorNormal.bind(this);
+		this.handleIntervaloUniforme = this.handleIntervaloUniforme.bind(this);
 	}
 	componentDidMount() {
 		menu();
@@ -89,6 +98,37 @@ class Probabilidade extends Component {
 					resultados: {
 						dados: response.data.dados,
 						tipo: "normal",
+					},
+				});
+			})
+			.catch((erro) => console.log(erro));
+	}
+
+	async calcularUniforme(e) {
+		e.preventDefault();
+		const valor = this.state.uniforme.valor.split(",").join(".");
+		const minimo = this.state.uniforme.minimo.split(",").join(".");
+		const maximo = this.state.uniforme.maximo.split(",").join(".");
+		const de = this.state.uniforme.de.split(",").join(".");
+		const ate = this.state.uniforme.ate.split(",").join(".");
+		const intervalo = this.state.uniforme.intervalo;
+		const body = JSON.stringify({
+			valor,
+			minimo,
+			maximo,
+			intervalo,
+			de,
+			ate,
+		});
+		let header = {
+			"Content-type": "application/json",
+		};
+		await Axios.post(`${URL}/probabilidade/uniforme`, body, { headers: header })
+			.then((response) => {
+				this.setState({
+					resultados: {
+						dados: response.data.dados,
+						tipo: "uniforme",
 					},
 				});
 			})
@@ -181,6 +221,46 @@ class Probabilidade extends Component {
 				},
 			});
 		}
+		if (e.target.id === "uniformeMinimo") {
+			this.setState({
+				uniforme: {
+					...this.state.uniforme,
+					minimo: e.target.value,
+				},
+			});
+		}
+		if (e.target.id === "uniformeMaximo") {
+			this.setState({
+				uniforme: {
+					...this.state.uniforme,
+					maximo: e.target.value,
+				},
+			});
+		}
+		if (e.target.id === "uniformeValor") {
+			this.setState({
+				uniforme: {
+					...this.state.uniforme,
+					valor: e.target.value,
+				},
+			});
+		}
+		if (e.target.id === "uniformeValorDe") {
+			this.setState({
+				uniforme: {
+					...this.state.uniforme,
+					de: e.target.value,
+				},
+			});
+		}
+		if (e.target.id === "uniformeValorAte") {
+			this.setState({
+				uniforme: {
+					...this.state.uniforme,
+					ate: e.target.value,
+				},
+			});
+		}
 	}
 
 	handleBinomialTipoEvento(e) {
@@ -196,6 +276,15 @@ class Probabilidade extends Component {
 		this.setState({
 			normal: {
 				...this.state.normal,
+				intervalo: e.target.name,
+			},
+		});
+	}
+
+	handleIntervaloUniforme(e) {
+		this.setState({
+			uniforme: {
+				...this.state.uniforme,
 				intervalo: e.target.name,
 			},
 		});
@@ -414,69 +503,103 @@ class Probabilidade extends Component {
 										</div>
 
 										<div className="tab-pane fade" id="uniforme" role="tabpanel" aria-labelledby="uniforme-tab">
-											<div className="form-row">
-												<div className="form-group col-12 text-center d-flex flex-column">
-													<div className="btn-group btn-group-toggle" data-toggle="buttons">
-														<label className="btn btn-secondary">
-															Menor que
-															<input type="radio" name="uniformemenor" onClick={(e) => this.handleEvento(e)}></input>
-														</label>
-														<label className="btn btn-secondary active">
-															Exatamente
-															<input type="radio" name="uniformeentre" defaultChecked onClick={(e) => this.handleEvento(e)}></input>
-														</label>
-														<label className="btn btn-secondary">
-															Maior que
-															<input type="radio" name="uniformemaior" onClick={(e) => this.handleEvento(e)}></input>
-														</label>
+											<form onSubmit={(e) => this.calcularUniforme(e)}>
+												<div className="form-row">
+													<div className="form-group col-12">
+														<input
+															type="text"
+															id="uniformeMinimo"
+															value={this.state.uniforme.minimo}
+															onChange={(e) => this.handleOnChange(e)}
+															placeholder="Informe o valor do ponto mínimo"
+															className="form-control"
+															required
+															autoComplete="off"
+														/>
 													</div>
 												</div>
-											</div>
-											<div className="form-row">
-												<div className="form-group col-12">
-													<input
-														type="text"
-														id="pontoMinimo"
-														value={this.state.pontoMinimo}
-														onChange={(e) => this.handleOnChange(e)}
-														placeholder="Informe o valor do ponto mínimo"
-														className="form-control numerico"
-														required
-														ref={(input) => (this.evento = input)}
-														autoComplete="off"
-													/>
+												<div className="form-row">
+													<div className="form-group col-12">
+														<input
+															type="text"
+															id="uniformeMaximo"
+															value={this.state.uniforme.maximo}
+															onChange={(e) => this.handleOnChange(e)}
+															placeholder="Informe o valor do ponto máximo"
+															className="form-control"
+															required
+															autoComplete="off"
+														/>
+													</div>
 												</div>
-											</div>
-											<div className="form-row">
-												<div className="form-group col-12">
-													<input
-														type="text"
-														id="pontoMaximo"
-														value={this.state.evento}
-														onChange={(e) => this.handleOnChange(e)}
-														placeholder="Informe o valor do ponto máximo"
-														className="form-control numerico"
-														required
-														ref={(input) => (this.evento = input)}
-														autoComplete="off"
-													/>
+												<div className="form-row">
+													<div className="form-group col-12 text-center d-flex flex-column">
+														<div className="btn-group btn-group-toggle" data-toggle="buttons">
+															<label className="btn btn-secondary">
+																Menor
+																<input type="radio" name="menor" defaultChecked onClick={(e) => this.handleIntervaloUniforme(e)}></input>
+															</label>
+															<label className="btn btn-secondary active">
+																Entre
+																<input type="radio" name="entre" onClick={(e) => this.handleIntervaloUniforme(e)}></input>
+															</label>
+															<label className="btn btn-secondary">
+																Maior
+																<input type="radio" name="maior" onClick={(e) => this.handleIntervaloUniforme(e)}></input>
+															</label>
+														</div>
+													</div>
 												</div>
-											</div>
-											<div className="form-row">
-												<div className="form-group col-12">
-													<input
-														type="text"
-														id="quantidade"
-														value={this.state.quantidade}
-														onChange={(e) => this.handleOnChange(e)}
-														placeholder="Informe o valor da quantidade"
-														className="form-control numerico"
-														required
-														ref={(input) => (this.evento = input)}
-														autoComplete="off"
-													/>
+												{this.state.uniforme.intervalo !== "entre" && (
+													<div className="form-row">
+														<div className="form-group col-12">
+															<input
+																type="text"
+																id="uniformeValor"
+																value={this.state.uniforme.valor}
+																onChange={(e) => this.handleOnChange(e)}
+																placeholder="Informe o valor"
+																className="form-control"
+																required
+																autoComplete="off"
+															/>
+														</div>
+													</div>
+												)}
+												{this.state.uniforme.intervalo === "entre" && (
+													<div className="form-row">
+														<div className="form-group col-6">
+															<input
+																type="text"
+																id="uniformeValorDe"
+																value={this.state.uniforme.de}
+																onChange={(e) => this.handleOnChange(e)}
+																placeholder="De"
+																className="form-control"
+																required
+																autoComplete="off"
+															/>
+														</div>
+														<div className="form-group col-6">
+															<input
+																type="text"
+																id="uniformeValorAte"
+																value={this.state.uniforme.ate}
+																onChange={(e) => this.handleOnChange(e)}
+																placeholder="Até"
+																className="form-control"
+																required
+																autoComplete="off"
+															/>
+														</div>
+													</div>
+												)}
+												<div className="form-row mt-0.5">
+													<div className="col-12 text-center">
+														<input type="submit" className="btn btn-outline-secondary btn-custom" id="btnCalcular" value="Calcular"></input>
+													</div>
 												</div>
-											</div>
+											</form>
 										</div>
 									</div>
 								</div>
@@ -488,7 +611,7 @@ class Probabilidade extends Component {
 							<div className="col-md-12 col-sm-12">
 								<div className="form-custom formulario">
 									<h1 className="text-center mb-5">Aqui está o resultado</h1>
-									{this.state.resultados.tipo === "binomial" && (
+									{(this.state.resultados.tipo === "binomial" || this.state.resultados.tipo === "uniforme") && (
 										<>
 											<div className="row">
 												<div className="col-12">
