@@ -78,9 +78,8 @@ class Home extends Component {
 							</div>
 							<div className="row">
 								<h2>
-									A estatística descritiva é um ramo da estatística que aplica várias técnicas para descrever e sumarizar um conjunto de dados. Diferencia-se da estatística inferencial, ou estatística
-									indutiva, pelo objectivo: organizar, sumarizar dados ao invés de usar os dados em aprendizado sobre a população. Esse princípio torna a estatística descritiva uma disciplina
-									independente.
+									A Estatística Descritiva é a etapa inicial de uma análise de dados e é utilizada para resumi-los e compreendê-los melhor. Essa área da estatística é utilizada com frequência em situações em que nos deparamos com uma grande quantidade de informações e precisamos torná-las mais condensadas para um trabalho mais claro.
+								<br />Com recursos como média, mediana, moda, desvio padrão e medidas separatrizes, conseguimos visualizar qual o melhor caminho a seguir.
 								</h2>
 							</div>
 							<div className="row">
@@ -99,8 +98,8 @@ class Home extends Component {
 							</div>
 							<div className="row">
 								<h2>
-									Probabilidade é um ramo da Matemática em que as chances de ocorrência de experimentos são calculadas. É por meio de uma probabilidade, por exemplo, que podemos saber desde a chance
-									de obter cara ou coroa no lançamento de uma moeda até a chance de erro em pesquisas. Começar
+									Probabilidade é o ramo da Matemática em que se calcula a chance de um experimento ocorrer. É por meio dela se descobre a possibilidade de sucesso ou fracasso de determinada atividade ou projeto.
+								<br />No Granger, você conta com a Distribuição Binomial, a Distribuição Normal e também a Distribuição Uniforme, sendo então de grande ajuda para que você vá com tudo rumo aos seus objetivos.
 								</h2>
 							</div>
 							<div className="row">
@@ -125,9 +124,8 @@ class Home extends Component {
 							</div>
 							<div className="row">
 								<h2>
-									Em probabilidade e estatística, correlação, dependência ou associação é qualquer relação estatística (causal ou não causal) entre duas variáveis e correlação é qualquer relação
-									dentro de uma ampla classNamee de relações estatísticas que envolva dependência entre duas variáveis. Por exemplo, a correlação entre a estatura dos pais e a estatura dos pais e dos
-									filhos.
+									Para situações nas quais há interesse em estudar o comportamento conjunto de uma ou mais variáveis para a ocorrência de determinado fenômeno ou ação, a Correlação e Regressão é a principal ferramenta.
+								<br />Logo, disponibilizamos em nosso software a análise de duas variáveis. Você conseguirá estimar a relação entre elas de maneira fácil e também direcionar os recursos e estratégias com exatidão e impulsionar suas metas.
 								</h2>
 							</div>
 							<div className="row">
@@ -136,6 +134,29 @@ class Home extends Component {
 								</Link>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div className="container-fluid mt-5" style={{background: "#f1f1f1"}}>
+					<div id="carouselExampleControls" className="carousel slide mt-5" data-ride="carousel">
+						<div className="carousel-inner">
+							<div className="carousel-item active carrousel-item-custom mt-5">
+								<img src={require("../../imagens/Testimonial1.png")} className="d-block w-100 carrousel-img" alt="..." />
+							</div>
+							<div className="carousel-item carrousel-item-custom mt-5">
+								<img src={require("../../imagens/Testimonial1.png")} className="d-block w-100 carrousel-img" alt="..." />
+							</div>
+							<div className="carousel-item carrousel-item-custom mt-5">
+								<img src={require("../../imagens/Testimonial1.png")} className="d-block w-100 carrousel-img" alt="..." />
+							</div>
+						</div>
+						<a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+							<span className="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span className="sr-only">Previous</span>
+						</a>
+						<a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+							<span className="carousel-control-next-icon" aria-hidden="true"></span>
+							<span className="sr-only">Next</span>
+						</a>
 					</div>
 				</div>
 			</div>

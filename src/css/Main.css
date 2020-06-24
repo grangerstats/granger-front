@@ -15,9 +15,51 @@
 }
 
 .background {
-	min-height: 100vh;
-	background: lightgrey;
-}
+	height: 100vh;
+	background: #fff;
+background: linear-gradient(90deg, #F2F2F2, #D9D9D9, #BFBFBF, #A6A6A6);
+;
+	background-size: 800% 800%;
+	-webkit-animation: Gradient 8s ease infinite;
+	-moz-animation: Gradient 8s ease infinite;
+	animation: Gradient 8s ease infinite;
+  }
+  
+  @-webkit-keyframes Gradient {
+	0% {
+	  background-position: 0% 50%
+	}
+	50% {
+	  background-position: 100% 50%
+	}
+	100% {
+	  background-position: 0% 50%
+	}
+  }
+  
+  @-moz-keyframes Gradient {
+	0% {
+	  background-position: 0% 50%
+	}
+	50% {
+	  background-position: 100% 50%
+	}
+	100% {
+	  background-position: 0% 50%
+	}
+  }
+  
+  @keyframes Gradient {
+	0% {
+	  background-position: 0% 50%
+	}
+	50% {
+	  background-position: 100% 50%
+	}
+	100% {
+	  background-position: 0% 50%
+	}
+  }
 
 .btn-custom {
 	border-radius: 50px !important;
@@ -84,4 +126,15 @@
 .medidas {
 	margin: 0 auto 50px auto;
 	font-size: 1.3rem;
+}
+
+.carrousel-item-custom {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.carrousel-img{
+	width: 45% !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }

@@ -365,7 +365,7 @@ class Probabilidade extends Component {
 													<div className="form-group col-12 text-center d-flex flex-column">
 														<div className="btn-group btn-group-toggle" data-toggle="buttons">
 															<label className="btn btn-secondary">
-																Menor
+																Máximo
 																<input type="radio" name="menor" onClick={(e) => this.handleBinomialTipoEvento(e)}></input>
 															</label>
 															<label className="btn btn-secondary active">
@@ -373,7 +373,7 @@ class Probabilidade extends Component {
 																<input type="radio" name="exatamente" defaultChecked onClick={(e) => this.handleBinomialTipoEvento(e)}></input>
 															</label>
 															<label className="btn btn-secondary">
-																Maior
+																Mínimo
 																<input type="radio" name="maior" onClick={(e) => this.handleBinomialTipoEvento(e)}></input>
 															</label>
 														</div>
@@ -410,7 +410,7 @@ class Probabilidade extends Component {
 															id="normalMedia"
 															value={this.state.normal.media}
 															onChange={(e) => this.handleOnChange(e)}
-															placeholder="Informe da media"
+															placeholder="Informe a média"
 															className="form-control"
 															required
 															autoComplete="off"
@@ -424,7 +424,7 @@ class Probabilidade extends Component {
 															id="normalDesvio"
 															value={this.state.normal.desvio}
 															onChange={(e) => this.handleOnChange(e)}
-															placeholder="Informe do desvio padrão"
+															placeholder="Informe o desvio padrão"
 															className="form-control"
 															required
 															autoComplete="off"

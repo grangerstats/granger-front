@@ -6,7 +6,6 @@ import BarChart from "../../components/BarChart";
 import Histograma from "../../components/Histrograma";
 import Tabela from "../../components/Tabela";
 import DesvioPadrao from "../DesvioPadrao";
-import { toPDF } from "../../javascript/Scripts";
 import { URL } from "../../config/config";
 
 class Descritiva extends Component {
@@ -99,6 +98,7 @@ class Descritiva extends Component {
 			"Content-type": "application/json",
 		};
 
+		if (this.separatriz.value.trim() !=="" && this.medida && this.medida.value.trim() !=="") {
 		axios
 			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
 			.then((res) => {
@@ -108,6 +108,7 @@ class Descritiva extends Component {
 			.catch((erro) => {
 				console.log("erro", erro);
 			});
+		}
 	}
 
 	async handleDown(linha) {
@@ -159,6 +160,7 @@ class Descritiva extends Component {
 			"Content-type": "application/json",
 		};
 
+		if (this.separatriz.value.trim() !=="" && this.medida && this.medida.value.trim() !=="") {
 		axios
 			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
 			.then((res) => {
@@ -168,6 +170,7 @@ class Descritiva extends Component {
 			.catch((erro) => {
 				console.log("erro", erro);
 			});
+		}
 	}
 
 	renderizaMedidaCentral() {
@@ -293,10 +296,6 @@ class Descritiva extends Component {
 			});
 	}
 
-	saveAsPDF() {
-		console.log("1.0");
-		toPDF();
-	}
 	render() {
 		return (
 			<div className="background">

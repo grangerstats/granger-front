@@ -6,6 +6,7 @@ import BarChart from "../../components/BarChart";
 import Histograma from "../../components/Histrograma";
 import { mudaNome, abrirUpload } from "../../javascript/Scripts";
 import Tabela from "../../components/Tabela";
+import DesvioPadrao from "../DesvioPadrao";
 import { URL } from "../../config/config";
 
 class Descritiva extends Component {
@@ -18,6 +19,9 @@ class Descritiva extends Component {
 			dados: "",
 			amostra: true,
 			populacao: false,
+			exibeMedidas: false,
+			opcaoesMedidas: [],
+			resposta: "",
 		};
 
 		this.handleNomeVariavel = this.handleNomeVariavel.bind(this);
@@ -58,6 +62,187 @@ class Descritiva extends Component {
 		this.setState({ amostra: !this.state.amostra });
 	}
 
+	async handleUp(linha) {
+		let vetor = this.state.resultado.dados;
+		let indexLinha = vetor.indexOf(linha);
+		let indexTroca = indexLinha - 1;
+		let auxLinha = vetor[indexTroca];
+
+		vetor = vetor.filter((item) => item !== linha);
+		vetor = vetor.filter((item) => item !== auxLinha);
+
+		vetor.splice(indexTroca, 0, linha);
+		vetor.splice(indexLinha, 0, auxLinha);
+
+		let novoResultado = this.state.resultado;
+		novoResultado.dados = vetor;
+
+		this.setState({ resultado: novoResultado });
+
+		let body = {
+			tipo: this.state.resultado.tipo,
+			dados: [],
+		};
+
+		this.state.resultado.dados.forEach((item) => {
+			for (let index = 0; index < item.value; index++) {
+				body.dados.push(item.name);
+			}
+		});
+
+		body = JSON.stringify(body);
+		let header = {
+			"Content-type": "application/json",
+		};
+		await axios
+			.post(`${URL}/mediana`, body, { headers: header })
+			.then((response) => {
+				novoResultado = this.state.resultado;
+				novoResultado.mediana = response.data;
+				this.setState({ resultado: novoResultado });
+			})
+			.catch((erro) => console.log(erro));
+
+		body = {
+			tipo: this.state.resultado.tipo,
+			dados: this.state.resultado.dados,
+		};
+		body = JSON.stringify(body);
+		header = {
+			"Content-type": "application/json",
+		};
+		
+		if (this.separatriz.value.trim() !== "" && this.medida && this.medida.value.trim() !=="") {
+		axios
+			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+			.then((res) => {
+				console.log("res");
+				this.setState({ resposta: res.data });
+			})
+			.catch((erro) => {
+				console.log("erro", erro);
+			});
+		}
+	}
+
+	async handleDown(linha) {
+		let vetor = this.state.resultado.dados;
+		let indexLinha = vetor.indexOf(linha);
+		let indexTroca = indexLinha + 1;
+		let auxLinha = vetor[indexTroca];
+
+		vetor = vetor.filter((item) => item !== linha);
+		vetor = vetor.filter((item) => item !== auxLinha);
+
+		vetor.splice(indexLinha, 0, auxLinha);
+		vetor.splice(indexTroca, 0, linha);
+
+		let novoResultado = this.state.resultado;
+		novoResultado.dados = vetor;
+
+		this.setState({ resultado: novoResultado });
+		let body = {
+			tipo: this.state.resultado.tipo,
+			dados: [],
+		};
+
+		this.state.resultado.dados.forEach((item) => {
+			for (let index = 0; index < item.value; index++) {
+				body.dados.push(item.name);
+			}
+		});
+
+		body = JSON.stringify(body);
+		let header = {
+			"Content-type": "application/json",
+		};
+		await axios
+			.post(`${URL}/mediana`, body, { headers: header })
+			.then((response) => {
+				novoResultado = this.state.resultado;
+				novoResultado.mediana = response.data;
+				this.setState({ resultado: novoResultado });
+			})
+			.catch((erro) => console.log(erro));
+
+		body = {
+			tipo: this.state.resultado.tipo,
+			dados: this.state.resultado.dados,
+		};
+		body = JSON.stringify(body);
+		header = {
+			"Content-type": "application/json",
+		};
+
+		if (this.separatriz.value.trim() !=="" && this.medida && this.medida.value.trim() !=="") {
+		axios
+			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+			.then((res) => {
+				console.log("res");
+				this.setState({ resposta: res.data });
+			})
+			.catch((erro) => {
+				console.log("erro", erro);
+			});
+		}	
+	}
+
+	renderizaMedidaCentral() {
+		if (this.state.resultado.media.trim() && !this.state.resultado.moda.trim() && !this.state.resultado.mediana.trim())
+			return (
+				<div className="medidas">
+					<span className="text-capitalize ">{this.state.resultado.media}</span>
+				</div>
+			);
+
+		if (!this.state.resultado.media.trim() && this.state.resultado.moda.trim() && !this.state.resultado.mediana.trim())
+			return (
+				<div className="medidas">
+					<span className="text-capitalize ">{this.state.resultado.moda}</span>
+				</div>
+			);
+
+		if (!this.state.resultado.media.trim() && !this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
+			return (
+				<div className="medidas">
+					<span className="text-capitalize ">{this.state.resultado.mediana}</span>
+				</div>
+			);
+
+		if (this.state.resultado.media.trim() && this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
+			return (
+				<div className="medidas">
+					<span className="text-capitalize ">
+						{this.state.resultado.media} - {this.state.resultado.moda} - {this.state.resultado.mediana}
+					</span>
+				</div>
+			);
+		if (!this.state.resultado.media.trim() && this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
+			return (
+				<div className="medidas">
+					<span className="text-capitalize ">
+						{this.state.resultado.moda} - {this.state.resultado.mediana}
+					</span>
+				</div>
+			);
+		if (this.state.resultado.media.trim() && !this.state.resultado.moda.trim() && this.state.resultado.mediana.trim())
+			return (
+				<div className="medidas">
+					<span className="text-capitalize ">
+						{this.state.resultado.media} - {this.state.resultado.mediana}
+					</span>
+				</div>
+			);
+		if (this.state.resultado.media.trim() && this.state.resultado.moda.trim() && !this.state.resultado.mediana.trim())
+			return (
+				<div className="medidas">
+					<span className="text-capitalize ">
+						{this.state.resultado.media} - {this.state.resultado.moda}
+					</span>
+				</div>
+			);
+	}
+
 	calcular(evento) {
 		evento.preventDefault();
 		let body = this.state;
@@ -75,9 +260,57 @@ class Descritiva extends Component {
 			});
 	}
 
+	handleChangeSeparatriz(e) {
+		let opcoes = [];
+		if (this.separatriz.selectedIndex === 1) {
+			for (let index = 1; index <= 4; index++) {
+				const element = { value: index, name: `${index}` };
+				opcoes.push(element);
+			}
+		}
+		if (this.separatriz.selectedIndex === 2) {
+			for (let index = 1; index <= 5; index++) {
+				const element = { value: index, name: `${index}` };
+				opcoes.push(element);
+			}
+		}
+		if (this.separatriz.selectedIndex === 3) {
+			for (let index = 1; index <= 10; index++) {
+				const element = { value: index, name: `${index}` };
+				opcoes.push(element);
+			}
+		}
+		if (this.separatriz.selectedIndex === 4) {
+			for (let index = 1; index <= 100; index++) {
+				const element = { value: index, name: `${index}` };
+				opcoes.push(element);
+			}
+		}
+		this.setState({ exibeMedidas: true });
+		this.setState({ opcaoesMedidas: opcoes });
+	}
+
+	handleChangeMedidas(e) {
+		let body = {
+			tipo: this.state.resultado.tipo,
+			dados: this.state.resultado.dados,
+		};
+		body = JSON.stringify(body);
+		let header = {
+			"Content-type": "application/json",
+		};
+
+		axios
+			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${e.target.value.toLowerCase()}`, body, { headers: header })
+			.then((res) => {
+				this.setState({ resposta: res.data });
+			})
+			.catch((erro) => {
+				console.log("erro", erro);
+			});
+	}
+
 	render() {
-		let fac = 0;
-		let facPerc = 0;
 
 		return (
 			<div className="background">
@@ -158,9 +391,77 @@ class Descritiva extends Component {
 										</div>
 										<div className="col-md-6 col-sm-12">
 											<div className="table-responsive">
-												<Tabela resultado={this.state.resultado} />
+											<Tabela resultado={this.state.resultado} {...this.props} handleUp={this.handleUp.bind(this)} handleDown={this.handleDown.bind(this)} />
+												</div>
+										</div>
+									</div>
+
+									<div className="row">
+										<div className="col-12">
+											<p className="h3 text-center">Medidas de Tendência Central</p>
+										</div>
+										{this.renderizaMedidaCentral()}
+									</div>
+
+									<DesvioPadrao {...this} />
+
+									<div className="row mb-4">
+										<div className="col-12">
+											<div className="row">
+												<div className="col-12">
+													<p className="h3 text-center">Medidas Separatrizes</p>
+												</div>
+											</div>
+											<div className="d-flex justify-content-center">
+												<div className="col-md-2">
+													<select className="form-control" ref={(input) => (this.separatriz = input)} onChange={(e) => this.handleChangeSeparatriz(e)}>
+														<option value="Selecione">Selecione...</option>
+														<option value="Quartil">Quartil</option>
+														<option value="Quintil">Quintil</option>
+														<option value="Decil">Decil</option>
+														<option value="Porcentil">Porcentil</option>
+													</select>
+												</div>
+												{this.state.exibeMedidas && (
+													<>
+														<div className="col-md-2">
+															<select className="form-control" ref={(input) => (this.medida = input)} onChange={(e) => this.handleChangeMedidas(e)}>
+																<option>Selecione...</option>
+																{this.state.opcaoesMedidas.map((op) => (
+																	<option value={op.value} key={op.value}>
+																		{op.name}
+																	</option>
+																))}
+															</select>
+														</div>
+														<div>
+															<div className="medidas">
+																<span className="text-capitalize ">{this.state.resposta}</span>
+															</div>
+														</div>
+													</>
+												)}
 											</div>
 										</div>
+									</div>
+									{/* <div className="row mb-2">
+										<button id="btnVoltar" className="btn btn-outline-secondary btn-custom text-uppercase" onClick={() => this.saveAsPDF()}>
+											Salvar Resultado
+										</button>
+									</div> */}
+									<div className="row">
+										<button
+											onClick={() => {
+												this.setState({ resultado: {} });
+												this.setState({ exibeMedidas: false });
+												this.setState({ opcaoesMedidas: [] });
+												this.setState({ resposta: "" });
+											}}
+											className="btn btn-outline-secondary btn-custom"
+											id="btnVoltar"
+										>
+											VOLTAR
+										</button>
 									</div>
 								</div>
 							)}
