@@ -1,39 +1,45 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
 import DescritivaManual from "./pages/descritiva/DescritivaManual";
 import DescritivaUpload from "./pages/descritiva/DescritivaUpload";
 import DescritivaMain from "./pages/descritiva/DescritivaMain";
-import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
 import Probabilidade from "./pages/probabilidade/Probabilidade";
-import Correlacao from "./pages/Correlacao";
+import Correlacao from "./pages/correlacao/CorrelacaoMain";
+import CorrelacaoManual from "./pages/correlacao/CorrelacaoManual";
 
 class App extends Component {
 	render() {
 		return (
 			<Router>
 				<Switch>
-					<Route path="/login">
+					<Route exact path="/login">
 						<Login />
 					</Route>
-					<Route path="/descritiva">
+					<Route exact path="/descritiva">
 						<DescritivaMain />
 					</Route>
-					<Route path="/upload">
+					<Route exact path="/descritiva/upload">
 						<DescritivaUpload />
 					</Route>
-					<Route path="/manual">
+					<Route exact path="/descritiva/manual">
 						<DescritivaManual />
 					</Route>
-					<Route path="/correlacao">
+					<Route exact path="/correlacao">
 						<Correlacao />
 					</Route>
-					<Route path="/probabilidade">
+					<Route exact path="/correlacao/manual">
+						<CorrelacaoManual />
+					</Route>
+					<Route exact path="/probabilidade">
 						<Probabilidade />
 					</Route>
-					<Route path="/">
+					<Route exact path="/">
 						<Home />
 					</Route>
+					<Redirect to="/" from="*" />
 				</Switch>
 			</Router>
 		);

@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import { menu } from "../../javascript/Scripts";
 import Menu from "../../components/Menu";
 import { Link } from "react-router-dom";
 
-class DescritivaMain extends Component {
+class Correlacao extends Component {
+	componentDidMount() {
+		menu();
+	}
 	render() {
 		return (
 			<div className="background">
@@ -14,10 +18,10 @@ class DescritivaMain extends Component {
 								<p className="mb-0">Importe seus arquivos ou os insira manualmente</p>
 								<footer className="blockquote-footer">A análise será feita automaticamente</footer>
 							</blockquote>
-							<Link className="btn btn-outline-secondary btn-custom mb-3" to="/descritiva/upload" style={{ width: "77%" }}>
+							<Link className="btn btn-outline-secondary btn-custom mb-3" to="/correlacao/upload" style={{ width: "77%" }}>
 								Importar
 							</Link>
-							<Link className="btn btn-outline-secondary btn-custom" to="/descritiva/manual" style={{ width: "77%" }}>
+							<Link className="btn btn-outline-secondary btn-custom" to="/correlacao/manual" style={{ width: "77%" }}>
 								Inserir manualmente
 							</Link>
 						</div>
@@ -27,4 +31,4 @@ class DescritivaMain extends Component {
 		);
 	}
 }
-export default DescritivaMain;
+export default Correlacao;
