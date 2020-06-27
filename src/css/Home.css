@@ -1,5 +1,4 @@
-body,
-html {
+body, html {
 	min-height: 100vh;
 	font-family: "Lato", serif;
 }
@@ -16,7 +15,7 @@ nav {
 .image {
 	width: 100%;
 	height: auto;
-	background: white;
+	background: #f8f8f8;
 }
 
 .slide-left-right {
@@ -129,10 +128,6 @@ h2 {
 	max-width: 381px;
 }
 
-.est-desc {
-	margin-top: 7rem;
-}
-
 .steps {
 	max-width: 300px;
 }
@@ -153,4 +148,72 @@ h3 {
 
 .nav-tabs .nav-link a {
 	color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.testimonial {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 4rem;
+}
+
+.onda-top {
+	width: 100%;
+}
+
+.poligonos {
+	background-image: url("../imagens/Poligons.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.testimo {
+	background-image: url("../imagens/middle-wave.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.main-img {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.faq {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 50%;
+}
+
+.faq-title {
+	margin-top: 50px;
+}
+
+.faq-btn {
+	color: #6C757D;
+}
+
+.faq-btn:hover {
+	color: #545B62;
+}
+
+.footer {
+	margin-top: 6rem;
+	background-color: #f8f8f8;
+	height: 200px;
+}
+
+.onda-bottom {
+	width: 100%;
+}
+
+.footer-btn {
+	margin-left: auto;
+	margin-top: 80px;
+	color: #f8f8f8;
+}
+
+.footer-btn:hover {
+	color: #545B62;
 }
