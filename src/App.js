@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Probabilidade from "./pages/probabilidade/Probabilidade";
 import Correlacao from "./pages/Correlacao";
+import Stars from "./pages/Stars";
 
 class App extends Component {
 	render() {
@@ -30,6 +31,9 @@ class App extends Component {
 					</Route>
 					<Route path="/probabilidade">
 						<Probabilidade />
+					</Route>
+					<Route path="/Stars">
+						<Stars />
 					</Route>
 					<Route path="/">
 						<Home />

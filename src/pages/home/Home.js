@@ -255,7 +255,7 @@ class Home extends Component {
 						<img className="onda-bottom" src={require("../../imagens/onda-bottom.png")}></img>
 					</div>
 					<div className="row">
-						<button type="button" class="btn btn-link footer-btn"><i class="fas fa-feather-alt"></i></button>
+						<Link className="btn btn-link footer-btn" to="/Stars"><i class="fas fa-feather-alt"></i></Link> 
 					</div>
 				</div>
 			</div>
