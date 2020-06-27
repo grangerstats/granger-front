@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Menu from "../../components/Menu";
 import axios from "axios";
 import { URL } from "../../config/config";
+import Dispersao from "../../components/Dispersao";
 
 export default class CorrelacaoManual extends Component {
 	constructor(props) {
@@ -13,6 +14,8 @@ export default class CorrelacaoManual extends Component {
 			dadosDependente: "",
 			nomeIndependente: "",
 			dadosIndependente: "",
+			projecaoX: "",
+			projecaoY: "",
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -25,6 +28,18 @@ export default class CorrelacaoManual extends Component {
 		if (e.target.id === "dadosDependente") this.setState({ dadosDependente: e.target.value });
 		if (e.target.id === "nomeIndependente") this.setState({ nomeIndependente: e.target.value });
 		if (e.target.id === "dadosIndependente") this.setState({ dadosIndependente: e.target.value });
+		if (e.target.id === "projecaoX") {
+			const value = Number(e.target.value);
+			const valueY = value * Number(this.state.resultado.dados.regressaoResultado.a) + Number(this.state.resultado.dados.regressaoResultado.b);
+			this.setState({ projecaoX: e.target.value });
+			this.setState({ projecaoY: valueY });
+		}
+		if (e.target.id === "projecaoY") {
+			const value = Number(e.target.value);
+			const valueX = (value - Number(this.state.resultado.dados.regressaoResultado.b)) / Number(this.state.resultado.dados.regressaoResultado.a);
+			this.setState({ projecaoY: e.target.value });
+			this.setState({ projecaoX: valueX });
+		}
 	}
 
 	calcular(e) {
@@ -127,7 +142,38 @@ export default class CorrelacaoManual extends Component {
 						</div>
 					)}
 
-					{this.state.resultado.dados && <div>{JSON.stringify(this.state.resultado.dados)}</div>}
+					{this.state.resultado.dados && (
+						<div className="form-custom">
+							<h1 className="text-center mb-5">Aqui está o resultado</h1>
+							<div className="row">
+								<div className="col-md-6 col-sm-12">
+									<Dispersao dadosGrafico={this.state.resultado.dados.dadosGrafico} nomeIndependente={this.state.nomeIndependente} nomeDependete={this.state.nomeDependete} />
+								</div>
+								<div className="col-md-6 col-sm-12">
+									<p className="h3 text-center"> Correlação: {this.state.resultado.dados.correlacaoResultado}% </p>
+									<p className="h3 text-center">Tipo de Correlação: {this.state.resultado.dados.tipo}</p>
+									<p className="h3 text-center">
+										Equação: y = {this.state.resultado.dados.regressaoResultado.a} * x + {this.state.resultado.dados.regressaoResultado.b}
+									</p>
+									<p className="h3 text-center">
+										Projeções: <input className="form-control correlacao-projecoes" placeholder="(x)" value={this.state.projecaoX} id="projecaoX" onChange={this.handleChange} /> -{" "}
+										<input className="form-control correlacao-projecoes" placeholder="(y)" value={this.state.projecaoY} id="projecaoY" onChange={this.handleChange} />
+									</p>
+								</div>
+							</div>
+							<div className="row">
+								<button
+									onClick={() => {
+										this.setState({ resultado: {} });
+									}}
+									className="btn btn-outline-secondary btn-custom"
+									id="btnVoltar"
+								>
+									VOLTAR
+								</button>
+							</div>
+						</div>
+					)}
 				</div>
 			</div>
 		);
