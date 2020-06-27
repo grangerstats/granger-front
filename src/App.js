@@ -9,6 +9,7 @@ import DescritivaMain from "./pages/descritiva/DescritivaMain";
 import Probabilidade from "./pages/probabilidade/Probabilidade";
 import Correlacao from "./pages/correlacao/CorrelacaoMain";
 import CorrelacaoManual from "./pages/correlacao/CorrelacaoManual";
+import Stars from "./pages/Stars";
 
 class App extends Component {
 	render() {
@@ -36,7 +37,10 @@ class App extends Component {
 					<Route exact path="/probabilidade">
 						<Probabilidade />
 					</Route>
-					<Route exact path="/">
+					<Route exact path="/stars">
+						<Stars />
+					</Route>
+					<Route path="/">
 						<Home />
 					</Route>
 					<Redirect to="/" from="*" />
