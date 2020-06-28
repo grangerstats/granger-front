@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
@@ -9,12 +9,14 @@ import DescritivaMain from "./pages/descritiva/DescritivaMain";
 import Probabilidade from "./pages/probabilidade/Probabilidade";
 import Correlacao from "./pages/correlacao/CorrelacaoMain";
 import CorrelacaoManual from "./pages/correlacao/CorrelacaoManual";
-import Stars from "./pages/Stars";
+import Stars from "./pages/stars/Stars";
+
+import history from "./History";
 
 class App extends Component {
 	render() {
 		return (
-			<Router>
+			<Router history={history}>
 				<Switch>
 					<Route exact path="/login">
 						<Login />

@@ -5,7 +5,7 @@ import PieChart from "../../components/PieChart";
 import BarChart from "../../components/BarChart";
 import Histograma from "../../components/Histrograma";
 import Tabela from "../../components/Tabela";
-import DesvioPadrao from "../DesvioPadrao";
+import DesvioPadrao from "../../components/DesvioPadrao";
 import { URL } from "../../config/config";
 
 class Descritiva extends Component {
@@ -98,16 +98,16 @@ class Descritiva extends Component {
 			"Content-type": "application/json",
 		};
 
-		if (this.separatriz.value.trim() !=="" && this.medida && this.medida.value.trim() !=="") {
-		axios
-			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
-			.then((res) => {
-				console.log("res");
-				this.setState({ resposta: res.data });
-			})
-			.catch((erro) => {
-				console.log("erro", erro);
-			});
+		if (this.separatriz.value.trim() !== "" && this.medida && this.medida.value.trim() !== "") {
+			axios
+				.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+				.then((res) => {
+					console.log("res");
+					this.setState({ resposta: res.data });
+				})
+				.catch((erro) => {
+					console.log("erro", erro);
+				});
 		}
 	}
 
@@ -160,16 +160,16 @@ class Descritiva extends Component {
 			"Content-type": "application/json",
 		};
 
-		if (this.separatriz.value.trim() !=="" && this.medida && this.medida.value.trim() !=="") {
-		axios
-			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
-			.then((res) => {
-				console.log("res");
-				this.setState({ resposta: res.data });
-			})
-			.catch((erro) => {
-				console.log("erro", erro);
-			});
+		if (this.separatriz.value.trim() !== "" && this.medida && this.medida.value.trim() !== "") {
+			axios
+				.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+				.then((res) => {
+					console.log("res");
+					this.setState({ resposta: res.data });
+				})
+				.catch((erro) => {
+					console.log("erro", erro);
+				});
 		}
 	}
 

@@ -4,6 +4,9 @@ import { menu, mask } from "../../javascript/Scripts";
 import Axios from "axios";
 import { URL } from "../../config/config";
 
+import { verificaUsuarioLogado } from "../../javascript/Scripts";
+import history from "../../History";
+
 class Probabilidade extends Component {
 	constructor(props) {
 		super(props);
@@ -42,6 +45,8 @@ class Probabilidade extends Component {
 	componentDidMount() {
 		menu();
 		mask();
+
+		if (!verificaUsuarioLogado()) history.push("/login");
 	}
 
 	async calcularBinomial(e) {

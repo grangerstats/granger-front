@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import Menu from "../../components/Menu";
 import { Link } from "react-router-dom";
+import { verificaUsuarioLogado } from "../../javascript/Scripts";
+import history from "../../History";
 
 class DescritivaMain extends Component {
+	componentDidMount() {
+		if (!verificaUsuarioLogado()) history.push("/login");
+	}
+
 	render() {
 		return (
 			<div className="background">

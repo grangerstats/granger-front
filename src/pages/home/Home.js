@@ -180,20 +180,18 @@ class Home extends Component {
 					</div>
 				</div>
 				<div className="container faq">
-					<div className="row faq-title">
+					<div className="row faq-title text-center">
 						<h1>Faq</h1>
 					</div>
 					<div className="row">
 						<div className="accordion" id="accordionExample">
 							<div className="card">
 								<div className="card-header" id="headingOne">
-									<h2 className="mb-0">
-										<button className="btn btn-link faq-btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											+ O que o sistema Granger oferece?
-        									</button>
-									</h2>
+									<button className="btn btn-link faq-btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										+ O que o sistema Granger oferece?
+									</button>
 								</div>
-								<div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+								<div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 									<div className="card-body">
 										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
 										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
@@ -204,11 +202,9 @@ class Home extends Component {
 							</div>
 							<div className="card">
 								<div className="card-header" id="headingTwo">
-									<h2 className="mb-0">
-										<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-											Collapsible Group Item #2
-										</button>
-									</h2>
+									<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										Collapsible Group Item #2
+									</button>
 								</div>
 								<div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 									<div className="card-body">
@@ -221,11 +217,9 @@ class Home extends Component {
 							</div>
 							<div className="card">
 								<div className="card-header" id="headingThree">
-									<h2 className="mb-0">
-										<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-											Collapsible Group Item #3
-										</button>
-									</h2>
+									<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										Collapsible Group Item #3
+									</button>
 								</div>
 								<div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
 									<div className="card-body">
@@ -238,11 +232,9 @@ class Home extends Component {
 							</div>
 							<div className="card">
 								<div className="card-header" id="headingThree">
-									<h2 className="mb-0">
-										<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-											Collapsible Group Item #4
-										</button>
-									</h2>
+									<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+										Collapsible Group Item #4
+									</button>
 								</div>
 								<div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
 									<div className="card-body">
@@ -255,11 +247,9 @@ class Home extends Component {
 							</div>
 							<div className="card">
 								<div className="card-header" id="headingFive">
-									<h2 className="mb-0">
-										<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-											Collapsible Group Item #5
-										</button>
-									</h2>
+									<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										Collapsible Group Item #5
+									</button>
 								</div>
 								<div id="collapseFive" className="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
 									<div className="card-body">
@@ -286,41 +276,41 @@ class Home extends Component {
 					<div className="row row-footer">
 						<div className="col-md-6 col-sm-12 text-center">
 							<h5>Informações de Contato</h5>
-							<p>Rua Irênio Grecco nº 4580
-							<br />Vila Imperador
-							<br />Franca/SP
-							<br />14405-191
-							<br />Telefone: (16) 3702-3204
-							<br />fatecfranca@fatecfranca.edu.br
+							<p>
+								Rua Irênio Grecco nº 4580, Vila Imperador - Franca/SP
+								<br />
+								Telefone: (16) 3702-3204 | fatecfranca@fatecfranca.edu.br
 							</p>
 						</div>
 						<div className="col-md-6 col-sm-12 contacts">
 							<div className="conjunto">
-								<a href="https://www.facebook.com/" target="_blank">
-									<div class="elipse">
-										<i class="fab fa-facebook-f" aria-hidden="true"></i>
+								<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+									<div className="elipse">
+										<i className="fab fa-facebook-f" aria-hidden="true"></i>
 									</div>
 								</a>
-								<a href="https://www.instagram.com/" target="_blank">
-									<div class="elipse">
-										<i class="fab fa-instagram" aria-hidden="true"></i>
+								<a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+									<div className="elipse">
+										<i className="fab fa-instagram" aria-hidden="true"></i>
 									</div>
 								</a>
-								<a href="https://www.linkedin.com/" target="_blank">
-									<div class="elipse">
-										<i class="fab fa-linkedin-in" aria-hidden="true"></i>
+								<a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+									<div className="elipse">
+										<i className="fab fa-linkedin-in" aria-hidden="true"></i>
 									</div>
 								</a>
-								<a href="https://www.github.com/" target="_blank">
-									<div class="elipse">
-										<i class="fab fa-github" aria-hidden="true"></i>
+								<a href="https://www.github.com/" target="_blank" rel="noopener noreferrer">
+									<div className="elipse">
+										<i className="fab fa-github" aria-hidden="true"></i>
 									</div>
 								</a>
 							</div>
 						</div>
 					</div>
 					<div className="row row-footer">
-						<Link className="btn btn-link footer-btn" to="/Stars"><i class="fas fa-feather-alt"></i></Link>
+						<Link className="btn btn-link footer-btn" to="/Stars">
+							<i className="fas fa-feather-alt"></i>
+						</Link>
 					</div>
 				</div>
 			</div>

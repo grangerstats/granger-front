@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-import { menu } from "../../javascript/Scripts";
+import { menu, verificaUsuarioLogado } from "../../javascript/Scripts";
 import Menu from "../../components/Menu";
 import { Link } from "react-router-dom";
+
+import history from "../../History";
 
 class Correlacao extends Component {
 	componentDidMount() {
 		menu();
+		if (!verificaUsuarioLogado()) history.push("/login");
 	}
 	render() {
 		return (

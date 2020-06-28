@@ -6,7 +6,7 @@ import BarChart from "../../components/BarChart";
 import Histograma from "../../components/Histrograma";
 import { mudaNome, abrirUpload } from "../../javascript/Scripts";
 import Tabela from "../../components/Tabela";
-import DesvioPadrao from "../DesvioPadrao";
+import DesvioPadrao from "../../components/DesvioPadrao";
 import { URL } from "../../config/config";
 
 class Descritiva extends Component {
@@ -111,17 +111,17 @@ class Descritiva extends Component {
 		header = {
 			"Content-type": "application/json",
 		};
-		
-		if (this.separatriz.value.trim() !== "" && this.medida && this.medida.value.trim() !=="") {
-		axios
-			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
-			.then((res) => {
-				console.log("res");
-				this.setState({ resposta: res.data });
-			})
-			.catch((erro) => {
-				console.log("erro", erro);
-			});
+
+		if (this.separatriz.value.trim() !== "" && this.medida && this.medida.value.trim() !== "") {
+			axios
+				.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+				.then((res) => {
+					console.log("res");
+					this.setState({ resposta: res.data });
+				})
+				.catch((erro) => {
+					console.log("erro", erro);
+				});
 		}
 	}
 
@@ -174,17 +174,17 @@ class Descritiva extends Component {
 			"Content-type": "application/json",
 		};
 
-		if (this.separatriz.value.trim() !=="" && this.medida && this.medida.value.trim() !=="") {
-		axios
-			.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
-			.then((res) => {
-				console.log("res");
-				this.setState({ resposta: res.data });
-			})
-			.catch((erro) => {
-				console.log("erro", erro);
-			});
-		}	
+		if (this.separatriz.value.trim() !== "" && this.medida && this.medida.value.trim() !== "") {
+			axios
+				.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
+				.then((res) => {
+					console.log("res");
+					this.setState({ resposta: res.data });
+				})
+				.catch((erro) => {
+					console.log("erro", erro);
+				});
+		}
 	}
 
 	renderizaMedidaCentral() {
@@ -311,7 +311,6 @@ class Descritiva extends Component {
 	}
 
 	render() {
-
 		return (
 			<div className="background">
 				<Menu />
@@ -391,8 +390,8 @@ class Descritiva extends Component {
 										</div>
 										<div className="col-md-6 col-sm-12">
 											<div className="table-responsive">
-											<Tabela resultado={this.state.resultado} {...this.props} handleUp={this.handleUp.bind(this)} handleDown={this.handleDown.bind(this)} />
-												</div>
+												<Tabela resultado={this.state.resultado} {...this.props} handleUp={this.handleUp.bind(this)} handleDown={this.handleDown.bind(this)} />
+											</div>
 										</div>
 									</div>
 
