@@ -181,7 +181,7 @@ class Home extends Component {
 				</div>
 				<div className="container faq">
 					<div className="row faq-title text-center">
-						<h1>Faq</h1>
+						<h1>FAQ</h1>
 					</div>
 					<div className="row">
 						<div className="accordion" id="accordionExample">
