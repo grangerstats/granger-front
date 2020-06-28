@@ -181,7 +181,7 @@ class Home extends Component {
 								<div className="card-header" id="headingOne">
 									<h2 className="mb-0">
 										<button className="btn btn-link faq-btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											+ Qual o valor para ter o Granger?
+											+ O que o sistema Granger oferece?
         									</button>
 									</h2>
 								</div>
@@ -254,8 +254,50 @@ class Home extends Component {
 					<div className="row">
 						<img className="onda-bottom" src={require("../../imagens/onda-bottom.png")}></img>
 					</div>
-					<div className="row">
-						<Link className="btn btn-link footer-btn" to="/Stars"><i class="fas fa-feather-alt"></i></Link> 
+					<div className="row row-granger">
+						<div className="col-md-6 col-sm-12">
+							<h3 className="gr-txt">GRANGER</h3>
+							<hr />
+						</div>
+					</div>
+					<div className="row row-footer">
+						<div className="col-md-6 col-sm-12 text-center">
+							<h5>Informações de Contato</h5>
+							<p>Rua Irênio Grecco nº 4580
+							<br />Vila Imperador
+							<br />Franca/SP
+							<br />14405-191
+							<br />Telefone: (16) 3702-3204
+							<br />fatecfranca@fatecfranca.edu.br
+							</p>
+						</div>
+						<div className="col-md-6 col-sm-12 contacts">
+							<div className="conjunto">
+								<a href="https://www.facebook.com/" target="_blank">
+									<div class="elipse">
+										<i class="fab fa-facebook-f" aria-hidden="true"></i>
+									</div>
+								</a>
+								<a href="https://www.instagram.com/" target="_blank">
+									<div class="elipse">
+										<i class="fab fa-instagram" aria-hidden="true"></i>
+									</div>
+								</a>
+								<a href="https://www.linkedin.com/" target="_blank">
+									<div class="elipse">
+										<i class="fab fa-linkedin-in" aria-hidden="true"></i>
+									</div>
+								</a>
+								<a href="https://www.github.com/" target="_blank">
+									<div class="elipse">
+										<i class="fab fa-github" aria-hidden="true"></i>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div className="row row-footer">
+						<Link className="btn btn-link footer-btn" to="/Stars"><i class="fas fa-feather-alt"></i></Link>
 					</div>
 				</div>
 			</div>

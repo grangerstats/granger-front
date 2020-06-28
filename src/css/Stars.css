@@ -18,3 +18,11 @@
     width: 60%;
     height: 60%;
 }
+
+.wingard {
+    display: block;
+	align-items: center;
+	justify-content: center;
+    color: white;
+    width: 100%;
+}
