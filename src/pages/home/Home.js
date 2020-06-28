@@ -31,7 +31,7 @@ class Home extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<img className="onda-top" src={require("../../imagens/onda top.png")}></img>
+						<img className="onda-top" src={require("../../imagens/onda top.png")} alt="" />
 					</div>
 				</div>
 				<div className="container works">
@@ -82,14 +82,16 @@ class Home extends Component {
 								</div>
 								<div className="row">
 									<h2>
-										A Estatística Descritiva é a etapa inicial de uma análise de dados e é utilizada para resumi-los e compreendê-los melhor. Essa área da estatística é utilizada com frequência em situações em que nos deparamos com uma grande quantidade de informações e precisamos torná-las mais condensadas para um trabalho mais claro.
-								<br />Com recursos como média, mediana, moda, desvio padrão e medidas separatrizes, conseguimos visualizar qual o melhor caminho a seguir.
-								</h2>
+										A Estatística Descritiva é a etapa inicial de uma análise de dados e é utilizada para resumi-los e compreendê-los melhor. Essa área da estatística é utilizada com frequência em
+										situações em que nos deparamos com uma grande quantidade de informações e precisamos torná-las mais condensadas para um trabalho mais claro.
+										<br />
+										Com recursos como média, mediana, moda, desvio padrão e medidas separatrizes, conseguimos visualizar qual o melhor caminho a seguir.
+									</h2>
 								</div>
 								<div className="row">
 									<Link className="btn btn-outline btn-start" to="/descritiva">
 										Comece Agora
-								</Link>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -102,14 +104,17 @@ class Home extends Component {
 								</div>
 								<div className="row">
 									<h2>
-										Probabilidade é o ramo da Matemática em que se calcula a chance de um experimento ocorrer. É por meio dela se descobre a possibilidade de sucesso ou fracasso de determinada atividade ou projeto.
-								<br />No Granger, você conta com a Distribuição Binomial, a Distribuição Normal e também a Distribuição Uniforme, sendo então de grande ajuda para que você vá com tudo rumo aos seus objetivos.
-								</h2>
+										Probabilidade é o ramo da Matemática em que se calcula a chance de um experimento ocorrer. É por meio dela se descobre a possibilidade de sucesso ou fracasso de determinada
+										atividade ou projeto.
+										<br />
+										No Granger, você conta com a Distribuição Binomial, a Distribuição Normal e também a Distribuição Uniforme, sendo então de grande ajuda para que você vá com tudo rumo aos seus
+										objetivos.
+									</h2>
 								</div>
 								<div className="row">
 									<Link className="btn btn-outline btn-start" to="/probabilidade">
 										Comece Agora
-								</Link>
+									</Link>
 								</div>
 							</div>
 							<div className="col-md-6 col-sm-12">
@@ -128,14 +133,17 @@ class Home extends Component {
 								</div>
 								<div className="row">
 									<h2>
-										Para situações nas quais há interesse em estudar o comportamento conjunto de uma ou mais variáveis para a ocorrência de determinado fenômeno ou ação, a Correlação e Regressão é a principal ferramenta.
-								<br />Logo, disponibilizamos em nosso software a análise de duas variáveis. Você conseguirá estimar a relação entre elas de maneira fácil e também direcionar os recursos e estratégias com exatidão e impulsionar suas metas.
-								</h2>
+										Para situações nas quais há interesse em estudar o comportamento conjunto de uma ou mais variáveis para a ocorrência de determinado fenômeno ou ação, a Correlação e Regressão é a
+										principal ferramenta.
+										<br />
+										Logo, disponibilizamos em nosso software a análise de duas variáveis. Você conseguirá estimar a relação entre elas de maneira fácil e também direcionar os recursos e estratégias
+										com exatidão e impulsionar suas metas.
+									</h2>
 								</div>
 								<div className="row">
 									<Link className="btn btn-outline btn-start" to="/correlacao">
 										Comece Agora
-								</Link>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -187,8 +195,11 @@ class Home extends Component {
 								</div>
 								<div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      									</div>
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+										you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
 								</div>
 							</div>
 							<div className="card">
@@ -196,13 +207,16 @@ class Home extends Component {
 									<h2 className="mb-0">
 										<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 											Collapsible Group Item #2
-        									</button>
+										</button>
 									</h2>
 								</div>
 								<div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      									</div>
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+										you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
 								</div>
 							</div>
 							<div className="card">
@@ -210,13 +224,16 @@ class Home extends Component {
 									<h2 className="mb-0">
 										<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 											Collapsible Group Item #3
-        									</button>
+										</button>
 									</h2>
 								</div>
 								<div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      								</div>
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+										you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
 								</div>
 							</div>
 							<div className="card">
@@ -224,13 +241,16 @@ class Home extends Component {
 									<h2 className="mb-0">
 										<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 											Collapsible Group Item #4
-        									</button>
+										</button>
 									</h2>
 								</div>
 								<div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      								</div>
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+										you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
 								</div>
 							</div>
 							<div className="card">
@@ -238,13 +258,16 @@ class Home extends Component {
 									<h2 className="mb-0">
 										<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
 											Collapsible Group Item #5
-        									</button>
+										</button>
 									</h2>
 								</div>
 								<div id="collapseFive" className="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      								</div>
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+										you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
 								</div>
 							</div>
 						</div>
@@ -252,7 +275,7 @@ class Home extends Component {
 				</div>
 				<div className="container-fluid footer">
 					<div className="row">
-						<img className="onda-bottom" src={require("../../imagens/onda-bottom.png")}></img>
+						<img className="onda-bottom" src={require("../../imagens/onda-bottom.png")} alt="" />
 					</div>
 					<div className="row row-granger">
 						<div className="col-md-6 col-sm-12">
