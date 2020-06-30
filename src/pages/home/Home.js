@@ -193,70 +193,61 @@ class Home extends Component {
 								</div>
 								<div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-										you probably haven't heard of them accusamus labore sustainable VHS.
+										O sistema Granger oferece um conjunto de soluções de análises, focadas na melhor tomada de decisão. 
+										Dentre as ferramentas oferecidas temos a Estatística Descritica, a Probabilidade e a Correlação e Regressão.
 									</div>
 								</div>
 							</div>
 							<div className="card">
 								<div className="card-header" id="headingTwo">
 									<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										Collapsible Group Item #2
+										+ Qual a configuração miníma recomendada para uso do sistema?
 									</button>
 								</div>
 								<div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-										you probably haven't heard of them accusamus labore sustainable VHS.
+									Por operar através da internet, é possível utilizar o sistema Granger mesmo em computadores e notebooks mais antigos. Nossa recomendação é ter uma conexão com a internet de boa qualidade e de preferência banda larga.
+									Aconselhamos que você mantenha seu computador com as atualizações mais recentes e que utilize um sistema de segurança.
+									Recomendamos também que o uso do sistema seja feito pelo navegador Chrome, para melhor velocidade e compatibilidade com o sistema.
 									</div>
 								</div>
 							</div>
 							<div className="card">
 								<div className="card-header" id="headingThree">
 									<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-										Collapsible Group Item #3
+										+ Qual o valor para utilizar o sistema?
 									</button>
 								</div>
 								<div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-										you probably haven't heard of them accusamus labore sustainable VHS.
+										Para uma simulação de valor personalizada para as uas necessidades, nossa equipe de atendimento está a disposição.
+										Contate-nos através das informações do rodapé dessa página, ou entre em contato através do e-mail: fatecfranca@fatecfranca.edu.br
 									</div>
 								</div>
 							</div>
 							<div className="card">
 								<div className="card-header" id="headingThree">
 									<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-										Collapsible Group Item #4
+										+ Posso experimentar o Granger antes de me decidir?
 									</button>
 								</div>
 								<div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-										you probably haven't heard of them accusamus labore sustainable VHS.
+										Sim, disponibilizamos uma versão de teste por até 15 dias.
+										Assim, você consegue explorar as funcionalidades do sistema e observar se o Granger atende às suas necessidades.
 									</div>
 								</div>
 							</div>
 							<div className="card">
 								<div className="card-header" id="headingFive">
 									<button className="btn btn-link collapsed faq-btn" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-										Collapsible Group Item #5
+										+ Por que um sistema Web seria o melhor para mim?
 									</button>
 								</div>
 								<div id="collapseFive" className="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
 									<div className="card-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-										nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-										beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-										you probably haven't heard of them accusamus labore sustainable VHS.
+										Um sistema Web possui uma série de vantagens sobre um sistema instalado em um servidor no seu negócio. 
+										Com um sistema 100% Web, você possui mobilidade e consegue acessar os dados e resultados que quiser de qualquer lugar, e através de diversas plataformas, como tablets e smartphones.
 									</div>
 								</div>
 							</div>
