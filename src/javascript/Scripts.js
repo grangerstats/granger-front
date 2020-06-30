@@ -42,7 +42,7 @@ export function stars() {
 	(function fairyDustCursor() {
 		var possibleColors = ["#814BA6", "#887BA6", "#DDAE51"];
 		var width = window.innerWidth;
-		var height = window.innerHeight - 100;
+		var height = window.innerHeight;
 		var cursor = { x: width / 2, y: width / 2 };
 		var particles = [];
 
@@ -60,7 +60,7 @@ export function stars() {
 
 		function onWindowResize(e) {
 			width = window.innerWidth;
-			height = window.innerHeight - 100;
+			height = window.innerHeight;
 		}
 
 		function onTouchMove(e) {

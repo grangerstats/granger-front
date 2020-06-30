@@ -1,53 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
-
 .stars {
-	background-image: url("../imagens/stars.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100vh;
+    background-image: url("../imagens/stars.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 
 .stars-row {
-	text-align: center;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stars-img {
-	width: 60%;
-	height: 60%;
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	right: 0;
-	text-align: center;
-	top: 20%;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 20%;
 }
 
 .wingard {
-	display: block;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	width: 100%;
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	right: 0;
-	text-align: center;
-	top: 8%;
-	font-family: "Alex Brush", cursive;
-	font-size: 100px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 3%;
+    font-family: "Alex Brush", cursive;
+    font-size: 100px;
 }
 
 .info-stars {
-	font-family: monospace;
-	position: absolute;
-	line-height: 20px;
-	font-size: 14px;
+    font-family: monospace;
+    position: absolute;
+    line-height: 20px;
+    font-size: 14px;
 }

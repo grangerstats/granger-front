@@ -1,279 +1,290 @@
 body,
 html {
-	min-height: 100vh;
-	font-family: "Lato", serif;
+    min-height: 100vh;
+    font-family: "Lato", serif;
 }
 
 nav.black {
-	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.13);
-	background: white;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.13);
+    background: white;
 }
 
 nav {
-	background-color: white;
+    background-color: white;
 }
 
 .image {
-	width: 100%;
-	height: auto;
-	background: #f8f8f8;
+    width: 100%;
+    height: auto;
+    background: #f8f8f8;
 }
 
 .slide-left-right {
-	text-decoration: none;
-	display: inline-block;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .slide-left-right:hover:after {
-	width: 80%;
-	margin-left: 10%;
-	background: linear-gradient(105deg, #34c2eb, #1a7fc3);
+    width: 80%;
+    margin-left: 10%;
+    background: linear-gradient(105deg, #34c2eb, #1a7fc3);
 }
 
 .slide-left-right:after {
-	content: "";
-	display: block;
-	height: 3px;
-	width: 0;
-	transition: width 0.3s ease, background-color 0.3s ease;
-	-webkit-transition: width 0.3s ease, background-color 0.3s ease;
-	-moz-transition: width 0.3s ease, background-color 0.3s ease;
-	margin-left: 10%;
-	background: linear-gradient(105deg, #34c2eb, #1a7fc3);
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    -webkit-transition: width 0.3s ease, background-color 0.3s ease;
+    -moz-transition: width 0.3s ease, background-color 0.3s ease;
+    margin-left: 10%;
+    background: linear-gradient(105deg, #34c2eb, #1a7fc3);
 }
 
 .navbar-brand {
-	padding-left: 2rem;
-	font-size: 1.5rem;
+    padding-left: 2rem;
+    font-size: 1.5rem;
 }
 
 .nav-btn {
-	width: 8rem;
+    width: 8rem;
 }
 
 .btn-login:hover {
-	background-color: #34c2eb;
-	color: white !important;
+    background-color: #34c2eb;
+    color: white !important;
 }
 
 .btn-login {
-	padding: 0.4rem 3rem !important;
-	border-radius: 5px !important;
-	margin-left: 1rem !important;
-	border-color: #34c2eb !important;
-	color: #34c2eb !important;
+    padding: 0.4rem 3rem !important;
+    border-radius: 5px !important;
+    margin-left: 1rem !important;
+    border-color: #34c2eb !important;
+    color: #34c2eb !important;
 }
 
 .nav-item {
-	padding-left: 0.5rem !important;
-	padding-right: 0.5rem !important;
-	font-size: 1.1rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    font-size: 1.1rem !important;
 }
 
 .heading-text {
-	width: auto;
-	padding-left: 5rem;
-	padding-top: 10rem;
+    width: auto;
+    padding-left: 5rem;
+    padding-top: 10rem;
 }
 
 .main-txt {
-	font-size: 69px;
+    font-size: 69px;
 }
 
 h2 {
-	width: 500px;
-	font-size: 19px;
-	padding-left: 0.3rem;
-	padding-top: 0.5rem;
-	letter-spacing: 0.5px;
+    width: 500px;
+    font-size: 19px;
+    padding-left: 0.3rem;
+    padding-top: 0.5rem;
+    letter-spacing: 0.5px;
 }
 
 .btn-start {
-	padding: 0.7rem 2rem;
-	border-radius: 5px;
-	border-color: #34c2eb;
-	color: white;
-	align-items: center !important;
-	background-color: #34c2eb;
-	margin-top: 1rem;
-	margin-left: 0.3rem;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    border-color: #34c2eb;
+    color: white;
+    align-items: center !important;
+    background-color: #34c2eb;
+    margin-top: 1rem;
+    margin-left: 0.3rem;
 }
 
 .btn-start:hover {
-	background-color: white;
-	color: #34c2eb;
-	transform: scale(1.05);
-	border-width: 2px;
+    background-color: white;
+    color: #34c2eb;
+    transform: scale(1.05);
+    border-width: 2px;
 }
 
 .txt-works {
-	text-align: center;
-	margin-bottom: 2rem;
-	margin-top: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
 }
 
 .works {
-	margin-right: auto;
-	margin-left: auto;
-	padding-bottom: 5rem;
-	text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 5rem;
+    text-align: center;
 }
 
 .steps {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .analysis {
-	max-width: 381px;
+    max-width: 381px;
 }
 
 .steps {
-	max-width: 300px;
+    max-width: 300px;
 }
 
 h3 {
-	margin-left: auto !important;
-	margin-right: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .lead {
-	margin-left: 0.3rem;
+    margin-left: 0.3rem;
 }
 
 .align-center {
-	margin-left: auto !important;
-	margin-right: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .nav-tabs .nav-link a {
-	color: rgba(0, 0, 0, 0.5) !important;
+    color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .testimonial {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 4rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
 }
 
 .onda-top {
-	width: 100%;
+    width: 100%;
 }
 
 .poligonos {
-	background-image: url("../imagens/Poligons.png");
-	background-repeat: no-repeat;
-	background-size: contain;
+    background-image: url("../imagens/Poligons.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .testimo {
-	background-image: url("../imagens/middle-wave.png");
-	background-repeat: no-repeat;
-	background-size: cover;
+    background-image: url("../imagens/middle-wave.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .main-img {
-	width: 100%;
-	margin-top: 40px;
+    width: 100%;
+    margin-top: 40px;
 }
 
 .faq {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
 }
 
 .faq-title {
-	margin-top: 50px;
-	width: fit-content;
-	margin-left: auto;
-	margin-right: auto;
+    margin-top: 50px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .faq-btn {
-	color: #6c757d;
-	text-align: center;
+    color: #6c757d;
+    text-align: center;
 }
 
 .faq-btn:hover {
-	color: #545b62;
+    color: #545b62;
 }
 
 .footer {
-	margin-top: 6rem;
-	background-color: #f8f8f8;
-	height: 200px;
+    margin-top: 6rem;
+    background-color: #f8f8f8;
+    height: 200px;
 }
 
 .onda-bottom {
-	width: 100%;
+    width: 100%;
 }
 
 .footer-row {
-	background-color: #f8f8f8;
+    background-color: #f8f8f8;
 }
+
 .footer-btn {
-	margin-left: auto;
-	color: #f8f8f8;
+    margin-left: auto;
+    color: #f8f8f8;
 }
 
 .footer-btn:hover {
-	color: #545b62;
+    color: #545b62;
 }
 
 .row-footer {
-	background-color: #f8f8f8;
+    background-color: #f8f8f8;
 }
 
 hr {
-	color: black;
-	max-width: 70%;
-	margin-left: auto;
+    color: black;
+    max-width: 70%;
+    margin-left: auto;
 }
 
 .row-granger {
-	text-align: center;
+    text-align: center;
 }
 
 .gr-txt {
-	font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .elipse {
-	width: 4.5vw;
-	height: 4.5vw;
-	border: 1px solid black;
-	border-radius: 100%;
-	margin-right: 1rem;
+    width: 4.5vw;
+    height: 4.5vw;
+    border: 1px solid black;
+    border-radius: 100%;
+    margin-right: 1rem;
 }
 
 .fab {
-	font-size: 1.5vw;
-	position: relative;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	color: black;
+    font-size: 1.5vw;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
 }
 
 .conjunto {
-	display: inline-flex;
-	margin-left: auto;
-	margin-right: auto;
-	width: auto;
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
 }
 
 .contacts {
-	display: flex;
+    display: flex;
 }
 
 .accordion {
-	margin-left: auto;
-	width: 70%;
-	margin-right: auto;
-	text-align: center;
+    margin-left: auto;
+    width: 70%;
+    margin-right: auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .poligonos {
+        background-repeat: unset;
+        background-size: 0em;
+    }
+    .contacts {
+        display: none;
+    }
 }

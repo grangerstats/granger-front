@@ -9,6 +9,7 @@ import DescritivaMain from "./pages/descritiva/DescritivaMain";
 import Probabilidade from "./pages/probabilidade/Probabilidade";
 import Correlacao from "./pages/correlacao/CorrelacaoMain";
 import CorrelacaoManual from "./pages/correlacao/CorrelacaoManual";
+import CorrelacaoUpload from './pages/correlacao/CorrelacaoUpload';
 import Stars from "./pages/stars/Stars";
 
 import history from "./History";
@@ -35,6 +36,9 @@ class App extends Component {
 					</Route>
 					<Route exact path="/correlacao/manual">
 						<CorrelacaoManual />
+					</Route>
+					<Route exact path="/correlacao/upload">
+						<CorrelacaoUpload />
 					</Route>
 					<Route exact path="/probabilidade">
 						<Probabilidade />

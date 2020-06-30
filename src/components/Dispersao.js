@@ -13,7 +13,7 @@ export default class Dispersao extends Component {
 						<Tooltip cursor={{ strokeDasharray: "3 3" }} />
 						<Legend />
 						<Scatter name={`${this.props.nomeIndependente} x ${this.props.nomeDependete}`} fill="#1a639e" />
-						<Line type="monotone" name="Linha de Regressão" dataKey="l" connectNulls={true} stroke="#34c2eb" fill="#34c2eb" />
+						<Line type="monotone" name="Linha de tendência" dataKey="l" connectNulls={true} stroke="#34c2eb" fill="#34c2eb" />
 					</ComposedChart>
 				</ResponsiveContainer>
 			</div>
