@@ -40,7 +40,7 @@ export function mask() {
 
 export function stars() {
 	(function fairyDustCursor() {
-		var possibleColors = ["#814BA6", "#887BA6", "#DDAE51"];
+		var possibleColors = ["#F2C84B", "#F2AE2E", "#F2921D"];
 		var width = window.innerWidth;
 		var height = window.innerHeight;
 		var cursor = { x: width / 2, y: width / 2 };
@@ -110,7 +110,7 @@ export function stars() {
 				display: "block",
 				pointerEvents: "none",
 				"z-index": "10000000",
-				fontSize: "30px",
+				fontSize: "18px",
 				"will-change": "transform",
 			};
 
