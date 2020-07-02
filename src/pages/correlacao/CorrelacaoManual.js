@@ -81,7 +81,7 @@ export default class CorrelacaoManual extends Component {
 											<input
 												type="text"
 												id="nomeIndependente"
-												placeholder="Nome da variável de (x)"
+												placeholder="Nome da variável independente (x)"
 												className="form-control"
 												required
 												value={this.state.nomeIndependente}
@@ -95,7 +95,7 @@ export default class CorrelacaoManual extends Component {
 											<input
 												type="text"
 												id="dadosIndependente"
-												placeholder="Dados (x) separados por ';'"
+												placeholder="Dados de (x) separados por ';'"
 												className="form-control"
 												required
 												value={this.state.dadosIndependente}
@@ -109,7 +109,7 @@ export default class CorrelacaoManual extends Component {
 											<input
 												type="text"
 												id="nomeDependete"
-												placeholder="Nome da variável de (y)"
+												placeholder="Nome da variável dependente (y)"
 												className="form-control"
 												required
 												value={this.state.nomeDependete}
@@ -123,7 +123,7 @@ export default class CorrelacaoManual extends Component {
 											<input
 												type="text"
 												id="dadosDependente"
-												placeholder="Dados (y) separados por ';'"
+												placeholder="Dados de (y) separados por ';'"
 												className="form-control"
 												required
 												value={this.state.dadosDependente}

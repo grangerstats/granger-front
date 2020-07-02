@@ -101,7 +101,7 @@ export default class CorrelacaoUpload extends Component {
 											<input
 												type="text"
 												id="nomeIndependente"
-												placeholder="Nome da variável de (x)"
+												placeholder="Nome da variável independente (x)"
 												className="form-control"
 												required
 												value={this.state.nomeIndependente}
@@ -116,7 +116,7 @@ export default class CorrelacaoUpload extends Component {
 											<input
 												type="text"
 												id="nomeDependete"
-												placeholder="Nome da variável de (y)"
+												placeholder="Nome da variável dependente (y)"
 												className="form-control"
 												required
 												value={this.state.nomeDependete}

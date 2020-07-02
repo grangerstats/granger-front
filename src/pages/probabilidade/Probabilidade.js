@@ -367,32 +367,14 @@ class Probabilidade extends Component {
 													</div>
 												</div>
 												<div className="form-row">
-													<div className="form-group col-12 text-center d-flex flex-column">
-														<div className="btn-group btn-group-toggle" data-toggle="buttons">
-															<label className="btn btn-secondary">
-																Máximo
-																<input type="radio" name="menor" onClick={(e) => this.handleBinomialTipoEvento(e)}></input>
-															</label>
-															<label className="btn btn-secondary active">
-																Exatamente
-																<input type="radio" name="exatamente" defaultChecked onClick={(e) => this.handleBinomialTipoEvento(e)}></input>
-															</label>
-															<label className="btn btn-secondary">
-																Mínimo
-																<input type="radio" name="maior" onClick={(e) => this.handleBinomialTipoEvento(e)}></input>
-															</label>
-														</div>
-													</div>
-												</div>
-												<div className="form-row">
 													<div className="form-group col-12">
 														<input
 															type="text"
 															id="evento"
 															value={this.state.binomial.evento}
 															onChange={(e) => this.handleOnChange(e)}
-															placeholder="Informe o valor do Evento (K)"
-															className="form-control numerico"
+															placeholder="Informe o valor do Evento (K) separado por ';'"
+															className="form-control"
 															required
 															autoComplete="off"
 														/>

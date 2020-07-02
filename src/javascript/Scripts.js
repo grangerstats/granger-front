@@ -177,3 +177,7 @@ export function verificaUsuarioLogado() {
 export function setUsuarioLogado(user) {
 	localStorage.setItem("grangerStats", user);
 }
+
+export function removeUsuarioLogado() {
+	localStorage.removeItem("grangerStats");
+}

@@ -41,7 +41,7 @@ class Login extends Component {
 
 		Axios.post(URL + "/login", body, { headers: header })
 			.then((res) => {
-				if (res.data !== "Usuário não cadstrado!") {
+				if(typeof res.data !== "string"){
 					setUsuarioLogado(JSON.stringify(res.data));
 					console.log(history);
 					history.goBack();
@@ -56,11 +56,10 @@ class Login extends Component {
 
 	handleInscreva(e) {
 		e.preventDefault();
-		e.preventDefault();
 
 		const body = JSON.stringify({
 			email: this.state.newEmail,
-			senha: this.state.newPassword,
+			senha: this.state.newSenha,
 			nome: this.state.newNome,
 		});
 
@@ -70,10 +69,11 @@ class Login extends Component {
 
 		Axios.post(URL + "/cadastrar", body, { headers: header })
 			.then((res) => {
-				if (res.data !== "Usuário não cadstrado!") {
+				if(typeof res.data !== "string"){
 					setUsuarioLogado(JSON.stringify(res.data));
-					history.push(-1);
+					history.goBack();
 				} else {
+					console.log("HERE")
 					alert(res.data);
 				}
 			})
@@ -101,17 +101,6 @@ class Login extends Component {
 							<div className="form-container sign-up-container">
 								<form className="form-login" onSubmit={(e) => this.handleInscreva(e)}>
 									<h1 className="h1-login">Crie sua conta</h1>
-									{/* <div className="social-container">
-								<a className="a-login"   href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-									<i className="fab fa-facebook-f"></i>
-								</a>
-								<a className="a-login"   href="http://google.com" className="social" target="_blank" rel="noopener noreferrer">
-									<i className="fab fa-google-plus-g"></i>
-								</a>
-								<a className="a-login"   href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-									<i className="fab fa-linkedin-in"></i>
-								</a>
-							</div> */}
 									<input type="text" value={this.state.newNome} onChange={this.handleChange} id="newNome" required className="input-login mt-4" placeholder="Name" autoComplete="off" />
 									<input type="email" value={this.state.newEmail} onChange={this.handleChange} id="newEmail" className="input-login" placeholder="Email" required autoComplete="off" />
 									<input type="password" value={this.state.newSenha} onChange={this.handleChange} id="newSenha" className="input-login" placeholder="Password" required autoComplete="off" />
@@ -123,17 +112,6 @@ class Login extends Component {
 							<div className="form-container sign-in-container">
 								<form className="form-login" onSubmit={(e) => this.handleLogin(e)}>
 									<h1 className="h1-login">Login</h1>
-									{/* <div className="social-container">
-								<a className="a-login"   href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-									<i className="fab fa-facebook-f"></i>
-								</a>
-								<a className="a-login"   href="http://google.com" className="social" target="_blank" rel="noopener noreferrer">
-									<i className="fab fa-google-plus-g"></i>
-								</a>
-								<a className="a-login"   href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-									<i className="fab fa-linkedin-in"></i>
-								</a>
-							</div> */}
 									<input type="email" id="email" value={this.state.email} onChange={this.handleChange} className="input-login mt-4" required placeholder="E-mail" autoComplete="off" />
 									<input type="password" id="password" value={this.state.password} onChange={this.handleChange} className="input-login" required placeholder="Senha" autoComplete="off" />
 									<a className="a-login" href="http://google.com">
