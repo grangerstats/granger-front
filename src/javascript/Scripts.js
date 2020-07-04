@@ -3,6 +3,8 @@
 import * as $ from "jquery";
 import "jquery-mask-plugin/dist/jquery.mask";
 
+import CryptoJS from 'crypto-js'
+
 export function mudaNome() {
 	$(document).ready(function () {
 		$("#inputGroupFile01").on("change", function () {
@@ -168,6 +170,11 @@ export function loginScripts() {
 	});
 }
 
+export function esqueciSenhaScript() {
+	const container = document.getElementById("container-login");
+	container.classList.add("right-panel-active");
+}
+
 export function verificaUsuarioLogado() {
 	const usuario = localStorage.getItem("grangerStats");
 	if (usuario) return true;
@@ -181,3 +188,16 @@ export function setUsuarioLogado(user) {
 export function removeUsuarioLogado() {
 	localStorage.removeItem("grangerStats");
 }
+
+export function descriptografar(senha) {
+	var bytes = CryptoJS.AES.decrypt(senha, 'secret key 123');
+	var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+
+	return decryptedData
+};
+
+export function criptografar(data) {
+	var encryptedData = CryptoJS.AES.encrypt(JSON.stringify(data), 'secret key 123').toString();
+
+	return encryptedData
+};

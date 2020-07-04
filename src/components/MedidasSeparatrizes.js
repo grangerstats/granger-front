@@ -61,6 +61,7 @@ class Separatrizes extends Component {
 				this.setState({ resposta: res.data });
 			})
 			.catch((erro) => {
+				alert("Ocorreu um erro no processamento.")
 				console.log("erro", erro);
 			});
 	}

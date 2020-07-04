@@ -17,6 +17,7 @@ class Descritiva extends Component {
 			nomeVariavel: "",
 			resultado: {},
 			dados: "",
+			nomeArquivo: "Escolha um arquivo",
 			amostra: true,
 			populacao: false,
 			exibeMedidas: false,
@@ -42,13 +43,13 @@ class Descritiva extends Component {
 
 	handleDados() {
 		let dados = this.nomeUpload.files[0];
+		this.setState({ nomeArquivo: dados.name });
 		let resultadoFinal = "";
 		let fileReader = new FileReader();
 		fileReader.onload = () => {
 			resultadoFinal = fileReader.result;
 			this.setState({ dados: resultadoFinal });
 		};
-
 		fileReader.readAsText(dados);
 	}
 
@@ -101,7 +102,7 @@ class Descritiva extends Component {
 				novoResultado.mediana = response.data;
 				this.setState({ resultado: novoResultado });
 			})
-			.catch((erro) => console.log(erro));
+			.catch((erro) => alert("Ocorreu um erro no processamento."));
 
 		body = {
 			tipo: this.state.resultado.tipo,
@@ -120,6 +121,7 @@ class Descritiva extends Component {
 					this.setState({ resposta: res.data });
 				})
 				.catch((erro) => {
+					alert("Ocorreu um erro no processamento.")
 					console.log("erro", erro);
 				});
 		}
@@ -163,7 +165,7 @@ class Descritiva extends Component {
 				novoResultado.mediana = response.data;
 				this.setState({ resultado: novoResultado });
 			})
-			.catch((erro) => console.log(erro));
+			.catch((erro) => alert("Ocorreu um erro no processamento."));
 
 		body = {
 			tipo: this.state.resultado.tipo,
@@ -182,6 +184,7 @@ class Descritiva extends Component {
 					this.setState({ resposta: res.data });
 				})
 				.catch((erro) => {
+					alert("Ocorreu um erro no processamento.")
 					console.log("erro", erro);
 				});
 		}
@@ -245,6 +248,10 @@ class Descritiva extends Component {
 
 	calcular(evento) {
 		evento.preventDefault();
+
+		if (this.state.dados === "") {
+			return alert("Nenhum arquivo foi importado.")
+		}
 		let body = this.state;
 		body = JSON.stringify(body);
 		let header = {
@@ -256,6 +263,7 @@ class Descritiva extends Component {
 				this.setState({ resultado: res.data });
 			})
 			.catch((res) => {
+				alert("Ocorreu um erro no processamento.")
 				console.log("Erro", res);
 			});
 	}
@@ -306,6 +314,7 @@ class Descritiva extends Component {
 				this.setState({ resposta: res.data });
 			})
 			.catch((erro) => {
+				alert("Ocorreu um erro no processamento.")
 				console.log("erro", erro);
 			});
 	}
@@ -347,7 +356,7 @@ class Descritiva extends Component {
 														onChange={this.handleDados}
 													/>
 													<label className="custom-file-label" htmlFor="inputGroupFile01" data-browse="Buscar">
-														Escolha o arquivo
+														{this.state.nomeArquivo}
 													</label>
 												</div>
 											</div>
@@ -455,6 +464,8 @@ class Descritiva extends Component {
 												this.setState({ exibeMedidas: false });
 												this.setState({ opcaoesMedidas: [] });
 												this.setState({ resposta: "" });
+												this.setState({ dados: "" })
+												this.setState({ nomeArquivo: "Escolha um arquivo" })
 											}}
 											className="btn btn-outline-secondary btn-custom"
 											id="btnVoltar"

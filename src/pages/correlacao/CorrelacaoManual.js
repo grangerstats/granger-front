@@ -63,6 +63,7 @@ export default class CorrelacaoManual extends Component {
 				this.setState({ resultado: res.data });
 			})
 			.catch((res) => {
+				alert("Ocorreu um erro no processamento.")
 				console.log("Erro", res);
 			});
 	}

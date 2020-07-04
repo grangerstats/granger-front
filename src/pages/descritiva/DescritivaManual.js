@@ -87,7 +87,10 @@ class Descritiva extends Component {
 				novoResultado.mediana = response.data;
 				this.setState({ resultado: novoResultado });
 			})
-			.catch((erro) => console.log(erro));
+			.catch((erro) => {
+				console.log(erro)
+				alert("Ocorreu um erro no processamento.")
+			});
 
 		body = {
 			tipo: this.state.resultado.tipo,
@@ -107,6 +110,7 @@ class Descritiva extends Component {
 				})
 				.catch((erro) => {
 					console.log("erro", erro);
+					alert("Ocorreu um erro no processamento.")
 				});
 		}
 	}
@@ -149,7 +153,7 @@ class Descritiva extends Component {
 				novoResultado.mediana = response.data;
 				this.setState({ resultado: novoResultado });
 			})
-			.catch((erro) => console.log(erro));
+			.catch((erro) => alert("Ocorreu um erro no processamento."));
 
 		body = {
 			tipo: this.state.resultado.tipo,
@@ -168,6 +172,7 @@ class Descritiva extends Component {
 					this.setState({ resposta: res.data });
 				})
 				.catch((erro) => {
+					alert("Ocorreu um erro no processamento.")
 					console.log("erro", erro);
 				});
 		}
@@ -242,6 +247,7 @@ class Descritiva extends Component {
 				this.setState({ resultado: res.data });
 			})
 			.catch((res) => {
+				alert("Ocorreu um erro no processamento.")
 				console.log("Erro", res);
 			});
 	}
@@ -292,6 +298,7 @@ class Descritiva extends Component {
 				this.setState({ resposta: res.data });
 			})
 			.catch((erro) => {
+				alert("Ocorreu um erro no processamento.")
 				console.log("erro", erro);
 			});
 	}

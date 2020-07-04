@@ -75,7 +75,7 @@ class Probabilidade extends Component {
 					},
 				});
 			})
-			.catch((erro) => console.log(erro));
+			.catch((erro) => alert("Ocorreu um erro no processamento."));
 	}
 
 	async calcularNormal(e) {
@@ -106,7 +106,7 @@ class Probabilidade extends Component {
 					},
 				});
 			})
-			.catch((erro) => console.log(erro));
+			.catch((erro) => alert("Ocorreu um erro no processamento."));
 	}
 
 	async calcularUniforme(e) {
@@ -137,7 +137,7 @@ class Probabilidade extends Component {
 					},
 				});
 			})
-			.catch((erro) => console.log(erro));
+			.catch((erro) => alert("Ocorreu um erro no processamento."));
 	}
 
 	handleOnChange(e) {

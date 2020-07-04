@@ -15,20 +15,22 @@ export default class CorrelacaoUpload extends Component {
 			dados: "",
 			nomeIndependente: "",
 			projecaoX: "",
-            projecaoY: "",
+			projecaoY: "",
+			nomeArquivo: "Escolha um arquivo",
 		};
 
 		this.handleChange = this.handleChange.bind(this);
-        this.calcular = this.calcular.bind(this);
-        this.handleDados = this.handleDados.bind(this);
-    }
-    componentDidMount() {
+		this.calcular = this.calcular.bind(this);
+		this.handleDados = this.handleDados.bind(this);
+	}
+	componentDidMount() {
 		mudaNome();
 		abrirUpload();
-    }
-    
-    handleDados() {
+	}
+
+	handleDados() {
 		let dados = this.nomeUpload.files[0];
+		this.setState({ nomeArquivo: dados.name });
 		let resultadoFinal = "";
 		let fileReader = new FileReader();
 		fileReader.onload = () => {
@@ -60,14 +62,18 @@ export default class CorrelacaoUpload extends Component {
 	}
 
 	calcular(e) {
-        e.preventDefault();
-        
-        const dados = this.state.dados.split("\n")
+		e.preventDefault();
+
+		if (this.state.dados === "") {
+			return alert("Nenhum arquivo foi importado.")
+		}
+
+		const dados = this.state.dados.split("\n")
 
 		const x = dados[0];
 		const y = dados[1];
 
-        console.log("dados", dados)
+		console.log("dados", dados)
 		const body = JSON.stringify({
 			x,
 			y,
@@ -84,6 +90,7 @@ export default class CorrelacaoUpload extends Component {
 			})
 			.catch((res) => {
 				console.log("Erro", res);
+				alert("Ocorreu um erro no processamento.")
 			});
 	}
 
@@ -110,7 +117,7 @@ export default class CorrelacaoUpload extends Component {
 											></input>
 										</div>
 									</div>
-									
+
 									<div className="form-row">
 										<div className="form-group col-12">
 											<input
@@ -138,7 +145,7 @@ export default class CorrelacaoUpload extends Component {
 														onChange={this.handleDados}
 													/>
 													<label className="custom-file-label" htmlFor="inputGroupFile01" data-browse="Buscar">
-														Escolha o arquivo
+														{this.state.nomeArquivo}
 													</label>
 												</div>
 											</div>
@@ -177,6 +184,8 @@ export default class CorrelacaoUpload extends Component {
 								<button
 									onClick={() => {
 										this.setState({ resultado: {} });
+										this.setState({ dados: "" })
+										this.setState({ nomeArquivo: "Escolha um arquivo" })
 									}}
 									className="btn btn-outline-secondary btn-custom"
 									id="btnVoltar"

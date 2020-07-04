@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { menu, loginScripts, setUsuarioLogado } from "../../javascript/Scripts";
+import { Link } from 'react-router-dom'
 import "../../css/Login.css";
 import Menu from "../../components/Menu";
 import Axios from "axios";
@@ -39,9 +40,10 @@ class Login extends Component {
 			"Content-type": "application/json",
 		};
 
+		console.log("body", body)
 		Axios.post(URL + "/login", body, { headers: header })
 			.then((res) => {
-				if(typeof res.data !== "string"){
+				if (typeof res.data !== "string") {
 					setUsuarioLogado(JSON.stringify(res.data));
 					console.log(history);
 					history.goBack();
@@ -50,6 +52,7 @@ class Login extends Component {
 				}
 			})
 			.catch((res) => {
+				alert("Ocorreu um erro no processamento.")
 				console.log("Erro", res);
 			});
 	}
@@ -69,7 +72,7 @@ class Login extends Component {
 
 		Axios.post(URL + "/cadastrar", body, { headers: header })
 			.then((res) => {
-				if(typeof res.data !== "string"){
+				if (typeof res.data !== "string") {
 					setUsuarioLogado(JSON.stringify(res.data));
 					history.goBack();
 				} else {
@@ -78,6 +81,7 @@ class Login extends Component {
 				}
 			})
 			.catch((res) => {
+				alert("Ocorreu um erro no processamento.")
 				console.log("Erro", res);
 			});
 	}
@@ -114,9 +118,9 @@ class Login extends Component {
 									<h1 className="h1-login">Login</h1>
 									<input type="email" id="email" value={this.state.email} onChange={this.handleChange} className="input-login mt-4" required placeholder="E-mail" autoComplete="off" />
 									<input type="password" id="password" value={this.state.password} onChange={this.handleChange} className="input-login" required placeholder="Senha" autoComplete="off" />
-									<a className="a-login" href="http://google.com">
+									<Link className="a-login" to="/esqueci-senha">
 										Esqueci minha senha
-									</a>
+									</Link>
 									<button className="button-login" type="submit">
 										Login
 									</button>

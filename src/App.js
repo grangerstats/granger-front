@@ -11,6 +11,7 @@ import Correlacao from "./pages/correlacao/CorrelacaoMain";
 import CorrelacaoManual from "./pages/correlacao/CorrelacaoManual";
 import CorrelacaoUpload from './pages/correlacao/CorrelacaoUpload';
 import Stars from "./pages/stars/Stars";
+import EsqueciSenha from './pages/esqueci-senha/EsqueciSenha'
 
 import history from "./History";
 
@@ -45,6 +46,9 @@ class App extends Component {
 					</Route>
 					<Route exact path="/stars">
 						<Stars />
+					</Route>
+					<Route exact path="/esqueci-senha">
+						<EsqueciSenha />
 					</Route>
 					<Route path="/">
 						<Home />
