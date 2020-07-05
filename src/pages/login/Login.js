@@ -40,12 +40,10 @@ class Login extends Component {
 			"Content-type": "application/json",
 		};
 
-		console.log("body", body)
 		Axios.post(URL + "/login", body, { headers: header })
 			.then((res) => {
 				if (typeof res.data !== "string") {
 					setUsuarioLogado(JSON.stringify(res.data));
-					console.log(history);
 					history.goBack();
 				} else {
 					alert(res.data);
@@ -53,7 +51,6 @@ class Login extends Component {
 			})
 			.catch((res) => {
 				alert("Ocorreu um erro no processamento.")
-				console.log("Erro", res);
 			});
 	}
 
@@ -76,13 +73,11 @@ class Login extends Component {
 					setUsuarioLogado(JSON.stringify(res.data));
 					history.goBack();
 				} else {
-					console.log("HERE")
 					alert(res.data);
 				}
 			})
 			.catch((res) => {
 				alert("Ocorreu um erro no processamento.")
-				console.log("Erro", res);
 			});
 	}
 

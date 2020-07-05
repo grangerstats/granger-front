@@ -12,18 +12,13 @@ class Granger extends Component {
         this.handleLogout = this.handleLogout.bind(this)
     }
 
-    componentDidMount(){
-        this.handleLogout();
-    }
-
-    componentDidUpdate() {
+    componentDidMount() {
         this.handleLogout();
     }
 
     handleLogout() {
         const isLogged = verificaUsuarioLogado();
         if (isLogged !== this.state.isLogged) this.setState({ isLogged });
-        // console.log("state", this.state);
     }
     render() {
         return (
@@ -56,7 +51,7 @@ class Granger extends Component {
                                 this.state.isLogged && (
                                     <li className="nav-item">
                                         <Link className="nav-link btn btn-outline-secondary btn-login" to="/" onClick={() => {
-                                            this.handleLogout();
+                                            this.setState({ isLogged: false })
                                             removeUsuarioLogado();
                                         }}>LOGOUT</Link>
                                     </li>

@@ -1,11 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Menu from "../../components/Menu";
-import { menu } from "../../javascript/Scripts";
+import { menu, verificaUsuarioLogado } from "../../javascript/Scripts";
 
 class Home extends Component {
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			isLogged: false
+		}
+	}
 	componentDidMount() {
 		menu();
+
+		const isLogged = verificaUsuarioLogado();
+		this.setState({ isLogged: isLogged })
 	}
 	render() {
 		return (
@@ -21,9 +31,14 @@ class Home extends Component {
 								<p className="lead">Com três análises básicas e objetivas, você consegue tomar a melhor decisão para fazer seu negócio decolar.</p>
 							</div>
 							<div className="row">
-								<Link className="btn btn-outline btn-start" to="/login">
-									Comece Agora
-								</Link>
+								{
+									!this.state.isLogged && (
+										<Link className="btn btn-outline btn-start" to="/login">
+											Comece Agora
+										</Link>
+									)
+								}
+
 							</div>
 						</div>
 						<div className="col-md-6 col-sm-12">
@@ -193,7 +208,7 @@ class Home extends Component {
 								</div>
 								<div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 									<div className="card-body">
-										O sistema Granger oferece um conjunto de soluções de análises, focadas na melhor tomada de decisão. 
+										O sistema Granger oferece um conjunto de soluções de análises, focadas na melhor tomada de decisão.
 										Dentre as ferramentas oferecidas temos a Estatística Descritica, a Probabilidade e a Correlação e Regressão.
 									</div>
 								</div>
@@ -206,9 +221,9 @@ class Home extends Component {
 								</div>
 								<div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 									<div className="card-body">
-									Por operar através da internet, é possível utilizar o sistema Granger mesmo em computadores e notebooks mais antigos. Nossa recomendação é ter uma conexão com a internet de boa qualidade e de preferência banda larga.
-									Aconselhamos que você mantenha seu computador com as atualizações mais recentes e que utilize um sistema de segurança.
-									Recomendamos também que o uso do sistema seja feito pelo navegador Chrome, para melhor velocidade e compatibilidade com o sistema.
+										Por operar através da internet, é possível utilizar o sistema Granger mesmo em computadores e notebooks mais antigos. Nossa recomendação é ter uma conexão com a internet de boa qualidade e de preferência banda larga.
+										Aconselhamos que você mantenha seu computador com as atualizações mais recentes e que utilize um sistema de segurança.
+										Recomendamos também que o uso do sistema seja feito pelo navegador Chrome, para melhor velocidade e compatibilidade com o sistema.
 									</div>
 								</div>
 							</div>
@@ -246,7 +261,7 @@ class Home extends Component {
 								</div>
 								<div id="collapseFive" className="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
 									<div className="card-body">
-										Um sistema Web possui uma série de vantagens sobre um sistema instalado em um servidor no seu negócio. 
+										Um sistema Web possui uma série de vantagens sobre um sistema instalado em um servidor no seu negócio.
 										Com um sistema 100% Web, você possui mobilidade e consegue acessar os dados e resultados que quiser de qualquer lugar, e através de diversas plataformas, como tablets e smartphones.
 									</div>
 								</div>

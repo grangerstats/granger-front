@@ -45,7 +45,6 @@ class Separatrizes extends Component {
 	}
 
 	handleChangeMedidas(e) {
-		console.log("sep", this.separatriz.value, e.target.value);
 		let body = {
 			tipo: this.props.state.resultado.tipo,
 			dados: this.props.state.resultado.dados,
@@ -57,12 +56,10 @@ class Separatrizes extends Component {
 
 		Axios.post(`${URL}/${this.separatriz.value.toLowerCase()}/${e.target.value.toLowerCase()}`, body, { headers: header })
 			.then((res) => {
-				console.log("res");
 				this.setState({ resposta: res.data });
 			})
 			.catch((erro) => {
 				alert("Ocorreu um erro no processamento.")
-				console.log("erro", erro);
 			});
 	}
 

@@ -73,7 +73,6 @@ export default class CorrelacaoUpload extends Component {
 		const x = dados[0];
 		const y = dados[1];
 
-		console.log("dados", dados)
 		const body = JSON.stringify({
 			x,
 			y,
@@ -89,7 +88,6 @@ export default class CorrelacaoUpload extends Component {
 				this.setState({ resultado: res.data });
 			})
 			.catch((res) => {
-				console.log("Erro", res);
 				alert("Ocorreu um erro no processamento.")
 			});
 	}

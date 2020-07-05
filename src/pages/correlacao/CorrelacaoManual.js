@@ -64,7 +64,6 @@ export default class CorrelacaoManual extends Component {
 			})
 			.catch((res) => {
 				alert("Ocorreu um erro no processamento.")
-				console.log("Erro", res);
 			});
 	}
 

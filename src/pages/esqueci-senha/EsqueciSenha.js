@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Menu from "../../components/Menu";
 import "../../css/Login.css";
-import { menu, esqueciSenhaScript, descriptografar, criptografar } from "../../javascript/Scripts";
+import { menu, esqueciSenhaScript, descriptografar, criptografar, verificaUsuarioLogado } from "../../javascript/Scripts";
 import Axios from "axios";
 import history from "../../History";
 import { URL } from "../../config/config";
@@ -21,7 +21,12 @@ export default class EsqueciSenha extends Component {
 		this.handleNovaSenha = this.handleNovaSenha.bind(this);
 		this.handleChange = this.handleChange.bind(this)
 	}
+
 	componentDidMount() {
+		if (verificaUsuarioLogado()) {
+			history.push("/")
+		}
+
 		menu();
 		const email = history.location.search;
 		if (email) {
@@ -43,8 +48,6 @@ export default class EsqueciSenha extends Component {
 			"Content-type": "application/json",
 		};
 
-		console.log("1.0", URL)
-
 		Axios.post(URL + "/esqueci-senha", body, { headers: header })
 			.then((res) => {
 				if (typeof res.data !== "string") {
@@ -56,7 +59,6 @@ export default class EsqueciSenha extends Component {
 			})
 			.catch((res) => {
 				alert("Ocorreu um erro no processamento.")
-				console.log("Erro", res);
 			});
 	}
 
@@ -83,7 +85,6 @@ export default class EsqueciSenha extends Component {
 			})
 			.catch((res) => {
 				alert("Ocorreu um erro no processamento.")
-				console.log("Erro", res);
 			});
 	}
 

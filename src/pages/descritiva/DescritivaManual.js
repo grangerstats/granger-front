@@ -88,7 +88,6 @@ class Descritiva extends Component {
 				this.setState({ resultado: novoResultado });
 			})
 			.catch((erro) => {
-				console.log(erro)
 				alert("Ocorreu um erro no processamento.")
 			});
 
@@ -105,11 +104,9 @@ class Descritiva extends Component {
 			axios
 				.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
 				.then((res) => {
-					console.log("res");
 					this.setState({ resposta: res.data });
 				})
 				.catch((erro) => {
-					console.log("erro", erro);
 					alert("Ocorreu um erro no processamento.")
 				});
 		}
@@ -168,12 +165,10 @@ class Descritiva extends Component {
 			axios
 				.post(`${URL}/${this.separatriz.value.toLowerCase()}/${this.medida.value.toLowerCase()}`, body, { headers: header })
 				.then((res) => {
-					console.log("res");
 					this.setState({ resposta: res.data });
 				})
 				.catch((erro) => {
 					alert("Ocorreu um erro no processamento.")
-					console.log("erro", erro);
 				});
 		}
 	}
@@ -248,7 +243,6 @@ class Descritiva extends Component {
 			})
 			.catch((res) => {
 				alert("Ocorreu um erro no processamento.")
-				console.log("Erro", res);
 			});
 	}
 
@@ -299,7 +293,6 @@ class Descritiva extends Component {
 			})
 			.catch((erro) => {
 				alert("Ocorreu um erro no processamento.")
-				console.log("erro", erro);
 			});
 	}
 
